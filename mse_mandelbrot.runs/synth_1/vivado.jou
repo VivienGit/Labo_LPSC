@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue Mar  6 17:47:28 2018
+# Process ID: 6248
+# Current directory: /home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1
+# Command line: vivado -log mse_mandelbrot.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mse_mandelbrot.tcl
+# Log file: /home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/mse_mandelbrot.vds
+# Journal file: /home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source mse_mandelbrot.tcl -notrace

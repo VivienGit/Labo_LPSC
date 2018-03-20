@@ -1,0 +1,19 @@
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2017.4/bin/unwrapped/lnx64.o/xelab -wto 48f417b18c744a1fab1dc15364498564 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_tmds_encoder_behav xil_defaultlib.tb_tmds_encoder xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.math_real
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.hdmi_interface_pkg
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioural of entity xil_defaultlib.tmds_encoder [tmds_encoder_default]
+Compiling architecture testbench of entity xil_defaultlib.tb_tmds_encoder
+Built simulation snapshot tb_tmds_encoder_behav

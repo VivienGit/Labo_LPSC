@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot/ip/hdl/src/hdmi_interface_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot/ip/hdl/src/tmds_encoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tmds_encoder
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot/ip/hdl/src/tb_tmds_encoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity tb_tmds_encoder

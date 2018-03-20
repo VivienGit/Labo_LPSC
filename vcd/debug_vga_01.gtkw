@@ -1,0 +1,49 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Tue Feb 27 16:21:27 2018
+[*]
+[dumpfile] "/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot/vcd/debug_vga_01.vcd"
+[dumpfile_mtime] "Tue Feb 27 16:17:58 2018"
+[dumpfile_size] 745397
+[savefile] "/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot/vcd/debug_vga_01.gtkw"
+[timestart] 5550
+[size] 1920 1016
+[pos] -1 -1
+*-11.000000 8440 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 229
+[signals_width] 606
+[sst_expanded] 1
+[sst_vpaned_height] 284
+@800200
+-TMDS
+@22
+dut.\Resolution1024x768xG.HdmixI/VgaToHdmixI/TmdsEncodedDataSymbolCh0xD[9:0]
+dut.\Resolution1024x768xG.HdmixI/VgaToHdmixI/TmdsEncodedDataSymbolCh1xD[9:0]
+dut.\Resolution1024x768xG.HdmixI/VgaToHdmixI/TmdsEncodedDataSymbolCh2xD[9:0]
+dut.\Resolution1024x768xG.HdmixI/VgaToHdmixI/TmdsEncodedDataSymbolClkxD[9:0]
+@1000200
+-TMDS
+@800200
+-RGB
+@22
+dut.\Resolution1024x768xG.HdmixI/VgaxI/DebugBluexD[7:0]
+dut.\Resolution1024x768xG.HdmixI/VgaxI/DebugGreenxD[7:0]
+dut.\Resolution1024x768xG.HdmixI/VgaxI/DebugRedxD[7:0]
+@1000200
+-RGB
+@800200
+-VGA
+@28
+[color] 2
+dut.\Resolution1024x768xG.HdmixI/VgaxI/VgaControlerxI/DebugHSyncxS
+[color] 2
+dut.\Resolution1024x768xG.HdmixI/VgaxI/VgaControlerxI/DebugVSyncxS
+@25
+dut.\Resolution1024x768xG.HdmixI/VgaxI/VgaControlerxI/HCountxD[15:0]
+dut.\Resolution1024x768xG.HdmixI/VgaxI/VgaControlerxI/VCountxD[15:0]
+@28
+dut.\Resolution1024x768xG.HdmixI/VgaxI/VgaControlerxI/VidOnxS
+@1000200
+-VGA
+[pattern_trace] 1
+[pattern_trace] 0

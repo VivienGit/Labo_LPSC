@@ -1,0 +1,46 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Tue Mar  6 17:51:22 2018
+| Host         : t450s-debian running 64-bit Debian GNU/Linux testing (buster)
+| Command      : report_methodology -file mse_mandelbrot_methodology_drc_routed.rpt -pb mse_mandelbrot_methodology_drc_routed.pb -rpx mse_mandelbrot_methodology_drc_routed.rpx
+| Design       : mse_mandelbrot
+| Device       : xc7a200tsbg484-1
+| Speed File   : -1
+| Design State : Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_mse_mandelbrot
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 2
++----------+----------+----------------------------------------------------+------------+
+| Rule     | Severity | Description                                        | Violations |
++----------+----------+----------------------------------------------------+------------+
+| TIMING-2 | Warning  | Invalid primary clock source pin                   | 1          |
+| TIMING-4 | Warning  | Invalid primary clock redefinition on a clock tree | 1          |
++----------+----------+----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-2#1 Warning
+Invalid primary clock source pin  
+A primary clock HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC is created on an inappropriate pin HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC. It is recommended to create a primary clock only on a proper clock source (input port or primitive output pin with no timing arc)
+Related violations: <none>
+
+TIMING-4#1 Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC is defined downstream of clock sys_clk_pin and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+

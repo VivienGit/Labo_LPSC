@@ -1,0 +1,1532 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
+| Date         : Tue Mar  6 17:51:24 2018
+| Host         : t450s-debian running 64-bit Debian GNU/Linux testing (buster)
+| Command      : report_timing_summary -max_paths 10 -file mse_mandelbrot_timing_summary_routed.rpt -rpx mse_mandelbrot_timing_summary_routed.rpx -warn_on_violation
+| Design       : mse_mandelbrot
+| Device       : 7a200t-sbg484
+| Speed File   : -1  PRODUCTION 1.20 2017-11-01
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 4 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     13.455        0.000                      0                  135        0.251        0.000                      0                  135        1.747        0.000                       0                    99  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock                                                                 Waveform(ns)         Period(ns)      Frequency(MHz)
+-----                                                                 ------------         ----------      --------------
+HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC  {0.000 5.000}        10.000          100.000         
+  ClkHdmixC_clk_vga_hdmi_1024x600                                     {0.000 1.951}        3.902           256.250         
+  ClkVgaxC_clk_vga_hdmi_1024x600                                      {0.000 9.756}        19.512          51.250          
+  clkfbout_clk_vga_hdmi_1024x600                                      {0.000 5.000}        10.000          100.000         
+sys_clk_pin                                                           {0.000 5.000}        10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                                                                     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                                                                     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC                                                                                                                                                    3.000        0.000                       0                     1  
+  ClkHdmixC_clk_vga_hdmi_1024x600                                                                                                                                                                                       1.747        0.000                       0                    10  
+  ClkVgaxC_clk_vga_hdmi_1024x600                                           13.455        0.000                      0                  135        0.251        0.000                      0                  135        9.256        0.000                       0                    84  
+  clkfbout_clk_vga_hdmi_1024x600                                                                                                                                                                                        7.845        0.000                       0                     3  
+sys_clk_pin                                                                                                                                                                                                             7.845        0.000                       0                     1  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+  To Clock:  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        3.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC }
+
+Check Type        Corner  Lib Pin            Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     MMCME2_ADV/CLKIN1  n/a            1.249         10.000      8.751      MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKIN1
+Max Period        n/a     MMCME2_ADV/CLKIN1  n/a            100.000       10.000      90.000     MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKIN1
+Low Pulse Width   Fast    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKIN1
+Low Pulse Width   Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKIN1
+High Pulse Width  Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKIN1
+High Pulse Width  Fast    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKIN1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  ClkHdmixC_clk_vga_hdmi_1024x600
+  To Clock:  ClkHdmixC_clk_vga_hdmi_1024x600
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        1.747ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         ClkHdmixC_clk_vga_hdmi_1024x600
+Waveform(ns):       { 0.000 1.951 }
+Period(ns):         3.902
+Sources:            { HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT1 }
+
+Check Type  Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period  n/a     BUFG/I              n/a            2.155         3.902       1.747      BUFGCTRL_X0Y1    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout2_buf/I
+Min Period  n/a     OSERDESE2/CLK       n/a            1.667         3.902       2.235      OLOGIC_X1Y136    HdmixI/VgaToHdmixI/SerializerChannel1xI/MasterOSERDESE2xI/CLK
+Min Period  n/a     OSERDESE2/CLK       n/a            1.667         3.902       2.235      OLOGIC_X1Y135    HdmixI/VgaToHdmixI/SerializerChannel1xI/SlaveOSERDESE2xI/CLK
+Min Period  n/a     OSERDESE2/CLK       n/a            1.667         3.902       2.235      OLOGIC_X1Y134    HdmixI/VgaToHdmixI/SerializerChannel2xI/MasterOSERDESE2xI/CLK
+Min Period  n/a     OSERDESE2/CLK       n/a            1.667         3.902       2.235      OLOGIC_X1Y133    HdmixI/VgaToHdmixI/SerializerChannel2xI/SlaveOSERDESE2xI/CLK
+Min Period  n/a     OSERDESE2/CLK       n/a            1.667         3.902       2.235      OLOGIC_X1Y140    HdmixI/VgaToHdmixI/SerializerChannel0xI/MasterOSERDESE2xI/CLK
+Min Period  n/a     OSERDESE2/CLK       n/a            1.667         3.902       2.235      OLOGIC_X1Y139    HdmixI/VgaToHdmixI/SerializerChannel0xI/SlaveOSERDESE2xI/CLK
+Min Period  n/a     OSERDESE2/CLK       n/a            1.667         3.902       2.235      OLOGIC_X1Y148    HdmixI/VgaToHdmixI/SerializerChannel3xI/MasterOSERDESE2xI/CLK
+Min Period  n/a     OSERDESE2/CLK       n/a            1.667         3.902       2.235      OLOGIC_X1Y147    HdmixI/VgaToHdmixI/SerializerChannel3xI/SlaveOSERDESE2xI/CLK
+Min Period  n/a     MMCME2_ADV/CLKOUT1  n/a            1.249         3.902       2.653      MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT1
+Max Period  n/a     MMCME2_ADV/CLKOUT1  n/a            213.360       3.902       209.458    MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  ClkVgaxC_clk_vga_hdmi_1024x600
+  To Clock:  ClkVgaxC_clk_vga_hdmi_1024x600
+
+Setup :            0  Failing Endpoints,  Worst Slack       13.455ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.251ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        9.256ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             13.455ns  (required time - arrival time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[17]/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            19.512ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@19.512ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        5.963ns  (logic 1.571ns (26.344%)  route 4.392ns (73.656%))
+  Logic Levels:           5  (CARRY4=2 LUT2=1 LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.041ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.712ns = ( 21.225 - 19.512 ) 
+    Source Clock Delay      (SCD):    1.828ns
+    Clock Pessimism Removal (CPR):    0.075ns
+  Clock Uncertainty:      0.082ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.148ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           2.106     2.106    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.900    -2.793 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.697    -0.096    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.828     1.828    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X157Y140       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X157Y140       FDCE (Prop_fdce_C_Q)         0.456     2.284 r  HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/Q
+                         net (fo=189, routed)         2.181     4.465    HdmixI/VgaxI/VgaControlerxI/DataxD_reg[19]
+    SLICE_X161Y136       LUT3 (Prop_lut3_I0_O)        0.124     4.589 r  HdmixI/VgaxI/VgaControlerxI/DataxD2_carry_i_5/O
+                         net (fo=1, routed)           0.000     4.589    ImageGeneratorxB.ImageGeneratorxI/VidOnxS_reg[3]
+    SLICE_X161Y136       CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     4.990 r  ImageGeneratorxB.ImageGeneratorxI/DataxD2_carry/CO[3]
+                         net (fo=1, routed)           0.000     4.990    ImageGeneratorxB.ImageGeneratorxI/DataxD2_carry_n_0
+    SLICE_X161Y137       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.104 f  ImageGeneratorxB.ImageGeneratorxI/DataxD2_carry__0/CO[3]
+                         net (fo=3, routed)           1.114     6.218    HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg_0[0]
+    SLICE_X159Y139       LUT2 (Prop_lut2_I1_O)        0.150     6.368 f  HdmixI/VgaxI/VgaControlerxI/DataxD[17]_i_2/O
+                         net (fo=1, routed)           1.097     7.466    HdmixI/VgaxI/VgaControlerxI/DataxD[17]_i_2_n_0
+    SLICE_X161Y141       LUT6 (Prop_lut6_I3_O)        0.326     7.792 r  HdmixI/VgaxI/VgaControlerxI/DataxD[17]_i_1/O
+                         net (fo=1, routed)           0.000     7.792    ImageGeneratorxB.ImageGeneratorxI/D[1]
+    SLICE_X161Y141       FDCE                                         r  ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                     19.512    19.512 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.972    21.484    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.637    16.847 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.574    19.421    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.712    21.225    ImageGeneratorxB.ImageGeneratorxI/ClkVgaxC
+    SLICE_X161Y141       FDCE                                         r  ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[17]/C
+                         clock pessimism              0.075    21.300    
+                         clock uncertainty           -0.082    21.218    
+    SLICE_X161Y141       FDCE (Setup_fdce_C_D)        0.029    21.247    ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[17]
+  -------------------------------------------------------------------
+                         required time                         21.247    
+                         arrival time                          -7.792    
+  -------------------------------------------------------------------
+                         slack                                 13.455    
+
+Slack (MET) :             13.476ns  (required time - arrival time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[15]/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            19.512ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@19.512ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        5.953ns  (logic 1.424ns (23.919%)  route 4.529ns (76.081%))
+  Logic Levels:           4  (LUT2=1 LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.030ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.706ns = ( 21.219 - 19.512 ) 
+    Source Clock Delay      (SCD):    1.825ns
+    Clock Pessimism Removal (CPR):    0.089ns
+  Clock Uncertainty:      0.082ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.148ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           2.106     2.106    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.900    -2.793 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.697    -0.096    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.825     1.825    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X159Y136       FDCE (Prop_fdce_C_Q)         0.456     2.281 r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/Q
+                         net (fo=18, routed)          1.716     3.998    HdmixI/VgaxI/VgaControlerxI/HCountCtrl2StripxD[13]
+    SLICE_X159Y139       LUT4 (Prop_lut4_I0_O)        0.152     4.150 r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8/O
+                         net (fo=2, routed)           1.416     5.566    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8_n_0
+    SLICE_X163Y137       LUT5 (Prop_lut5_I0_O)        0.360     5.926 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5/O
+                         net (fo=1, routed)           0.267     6.192    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5_n_0
+    SLICE_X163Y137       LUT6 (Prop_lut6_I5_O)        0.332     6.524 f  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3/O
+                         net (fo=15, routed)          1.131     7.655    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3_n_0
+    SLICE_X159Y135       LUT2 (Prop_lut2_I1_O)        0.124     7.779 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_1/O
+                         net (fo=1, routed)           0.000     7.779    HdmixI/VgaxI/VgaControlerxI/HCountxD_0[15]
+    SLICE_X159Y135       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                     19.512    19.512 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.972    21.484    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.637    16.847 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.574    19.421    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.706    21.219    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y135       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[15]/C
+                         clock pessimism              0.089    21.308    
+                         clock uncertainty           -0.082    21.226    
+    SLICE_X159Y135       FDCE (Setup_fdce_C_D)        0.029    21.255    HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[15]
+  -------------------------------------------------------------------
+                         required time                         21.255    
+                         arrival time                          -7.779    
+  -------------------------------------------------------------------
+                         slack                                 13.476    
+
+Slack (MET) :             13.494ns  (required time - arrival time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[6]/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            19.512ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@19.512ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        5.981ns  (logic 1.452ns (24.275%)  route 4.529ns (75.725%))
+  Logic Levels:           4  (LUT2=1 LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.030ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.706ns = ( 21.219 - 19.512 ) 
+    Source Clock Delay      (SCD):    1.825ns
+    Clock Pessimism Removal (CPR):    0.089ns
+  Clock Uncertainty:      0.082ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.148ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           2.106     2.106    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.900    -2.793 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.697    -0.096    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.825     1.825    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X159Y136       FDCE (Prop_fdce_C_Q)         0.456     2.281 r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/Q
+                         net (fo=18, routed)          1.716     3.998    HdmixI/VgaxI/VgaControlerxI/HCountCtrl2StripxD[13]
+    SLICE_X159Y139       LUT4 (Prop_lut4_I0_O)        0.152     4.150 r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8/O
+                         net (fo=2, routed)           1.416     5.566    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8_n_0
+    SLICE_X163Y137       LUT5 (Prop_lut5_I0_O)        0.360     5.926 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5/O
+                         net (fo=1, routed)           0.267     6.192    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5_n_0
+    SLICE_X163Y137       LUT6 (Prop_lut6_I5_O)        0.332     6.524 f  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3/O
+                         net (fo=15, routed)          1.131     7.655    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3_n_0
+    SLICE_X159Y135       LUT2 (Prop_lut2_I1_O)        0.152     7.807 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[6]_i_1/O
+                         net (fo=1, routed)           0.000     7.807    HdmixI/VgaxI/VgaControlerxI/HCountxD_0[6]
+    SLICE_X159Y135       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                     19.512    19.512 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.972    21.484    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.637    16.847 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.574    19.421    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.706    21.219    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y135       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[6]/C
+                         clock pessimism              0.089    21.308    
+                         clock uncertainty           -0.082    21.226    
+    SLICE_X159Y135       FDCE (Setup_fdce_C_D)        0.075    21.301    HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[6]
+  -------------------------------------------------------------------
+                         required time                         21.301    
+                         arrival time                          -7.807    
+  -------------------------------------------------------------------
+                         slack                                 13.494    
+
+Slack (MET) :             13.592ns  (required time - arrival time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[18]/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            19.512ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@19.512ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        5.828ns  (logic 1.492ns (25.600%)  route 4.336ns (74.400%))
+  Logic Levels:           5  (CARRY4=2 LUT3=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.041ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.712ns = ( 21.225 - 19.512 ) 
+    Source Clock Delay      (SCD):    1.828ns
+    Clock Pessimism Removal (CPR):    0.075ns
+  Clock Uncertainty:      0.082ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.148ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           2.106     2.106    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.900    -2.793 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.697    -0.096    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.828     1.828    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X157Y140       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X157Y140       FDCE (Prop_fdce_C_Q)         0.456     2.284 r  HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/Q
+                         net (fo=189, routed)         2.168     4.453    HdmixI/VgaxI/VgaControlerxI/DataxD_reg[19]
+    SLICE_X160Y136       LUT3 (Prop_lut3_I1_O)        0.124     4.577 r  HdmixI/VgaxI/VgaControlerxI/DataxD[16]_i_43/O
+                         net (fo=1, routed)           0.000     4.577    HdmixI/VgaxI/VgaControlerxI/DataxD[16]_i_43_n_0
+    SLICE_X160Y136       CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.127 r  HdmixI/VgaxI/VgaControlerxI/DataxD_reg[16]_i_15/CO[3]
+                         net (fo=1, routed)           0.000     5.127    HdmixI/VgaxI/VgaControlerxI/DataxD_reg[16]_i_15_n_0
+    SLICE_X160Y137       CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.241 r  HdmixI/VgaxI/VgaControlerxI/DataxD_reg[16]_i_3/CO[3]
+                         net (fo=3, routed)           1.060     6.300    HdmixI/VgaxI/VgaControlerxI/ImageGeneratorxB.ImageGeneratorxI/DataxD211_in
+    SLICE_X159Y139       LUT4 (Prop_lut4_I1_O)        0.124     6.424 f  HdmixI/VgaxI/VgaControlerxI/DataxD[18]_i_3/O
+                         net (fo=1, routed)           1.108     7.533    HdmixI/VgaxI/VgaControlerxI/DataxD[18]_i_3_n_0
+    SLICE_X161Y141       LUT6 (Prop_lut6_I3_O)        0.124     7.657 r  HdmixI/VgaxI/VgaControlerxI/DataxD[18]_i_1/O
+                         net (fo=1, routed)           0.000     7.657    ImageGeneratorxB.ImageGeneratorxI/D[2]
+    SLICE_X161Y141       FDCE                                         r  ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[18]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                     19.512    19.512 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.972    21.484    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.637    16.847 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.574    19.421    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.712    21.225    ImageGeneratorxB.ImageGeneratorxI/ClkVgaxC
+    SLICE_X161Y141       FDCE                                         r  ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[18]/C
+                         clock pessimism              0.075    21.300    
+                         clock uncertainty           -0.082    21.218    
+    SLICE_X161Y141       FDCE (Setup_fdce_C_D)        0.031    21.249    ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[18]
+  -------------------------------------------------------------------
+                         required time                         21.249    
+                         arrival time                          -7.657    
+  -------------------------------------------------------------------
+                         slack                                 13.592    
+
+Slack (MET) :             13.623ns  (required time - arrival time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[12]/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            19.512ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@19.512ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        5.833ns  (logic 1.424ns (24.413%)  route 4.409ns (75.587%))
+  Logic Levels:           4  (LUT2=1 LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.005ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.706ns = ( 21.219 - 19.512 ) 
+    Source Clock Delay      (SCD):    1.825ns
+    Clock Pessimism Removal (CPR):    0.114ns
+  Clock Uncertainty:      0.082ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.148ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           2.106     2.106    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.900    -2.793 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.697    -0.096    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.825     1.825    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X159Y136       FDCE (Prop_fdce_C_Q)         0.456     2.281 r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/Q
+                         net (fo=18, routed)          1.716     3.998    HdmixI/VgaxI/VgaControlerxI/HCountCtrl2StripxD[13]
+    SLICE_X159Y139       LUT4 (Prop_lut4_I0_O)        0.152     4.150 r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8/O
+                         net (fo=2, routed)           1.416     5.566    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8_n_0
+    SLICE_X163Y137       LUT5 (Prop_lut5_I0_O)        0.360     5.926 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5/O
+                         net (fo=1, routed)           0.267     6.192    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5_n_0
+    SLICE_X163Y137       LUT6 (Prop_lut6_I5_O)        0.332     6.524 f  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3/O
+                         net (fo=15, routed)          1.010     7.534    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3_n_0
+    SLICE_X159Y136       LUT2 (Prop_lut2_I1_O)        0.124     7.658 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[12]_i_1/O
+                         net (fo=1, routed)           0.000     7.658    HdmixI/VgaxI/VgaControlerxI/HCountxD_0[12]
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                     19.512    19.512 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.972    21.484    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.637    16.847 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.574    19.421    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.706    21.219    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[12]/C
+                         clock pessimism              0.114    21.333    
+                         clock uncertainty           -0.082    21.251    
+    SLICE_X159Y136       FDCE (Setup_fdce_C_D)        0.031    21.282    HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[12]
+  -------------------------------------------------------------------
+                         required time                         21.282    
+                         arrival time                          -7.658    
+  -------------------------------------------------------------------
+                         slack                                 13.623    
+
+Slack (MET) :             13.623ns  (required time - arrival time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[10]/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            19.512ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@19.512ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        5.831ns  (logic 1.424ns (24.421%)  route 4.407ns (75.579%))
+  Logic Levels:           4  (LUT2=1 LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.005ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.706ns = ( 21.219 - 19.512 ) 
+    Source Clock Delay      (SCD):    1.825ns
+    Clock Pessimism Removal (CPR):    0.114ns
+  Clock Uncertainty:      0.082ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.148ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           2.106     2.106    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.900    -2.793 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.697    -0.096    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.825     1.825    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X159Y136       FDCE (Prop_fdce_C_Q)         0.456     2.281 r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/Q
+                         net (fo=18, routed)          1.716     3.998    HdmixI/VgaxI/VgaControlerxI/HCountCtrl2StripxD[13]
+    SLICE_X159Y139       LUT4 (Prop_lut4_I0_O)        0.152     4.150 r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8/O
+                         net (fo=2, routed)           1.416     5.566    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8_n_0
+    SLICE_X163Y137       LUT5 (Prop_lut5_I0_O)        0.360     5.926 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5/O
+                         net (fo=1, routed)           0.267     6.192    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5_n_0
+    SLICE_X163Y137       LUT6 (Prop_lut6_I5_O)        0.332     6.524 f  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3/O
+                         net (fo=15, routed)          1.008     7.532    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3_n_0
+    SLICE_X159Y136       LUT2 (Prop_lut2_I1_O)        0.124     7.656 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[10]_i_1/O
+                         net (fo=1, routed)           0.000     7.656    HdmixI/VgaxI/VgaControlerxI/HCountxD_0[10]
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                     19.512    19.512 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.972    21.484    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.637    16.847 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.574    19.421    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.706    21.219    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[10]/C
+                         clock pessimism              0.114    21.333    
+                         clock uncertainty           -0.082    21.251    
+    SLICE_X159Y136       FDCE (Setup_fdce_C_D)        0.029    21.280    HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[10]
+  -------------------------------------------------------------------
+                         required time                         21.280    
+                         arrival time                          -7.656    
+  -------------------------------------------------------------------
+                         slack                                 13.623    
+
+Slack (MET) :             13.639ns  (required time - arrival time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[3]/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            19.512ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@19.512ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        5.861ns  (logic 1.452ns (24.774%)  route 4.409ns (75.226%))
+  Logic Levels:           4  (LUT2=1 LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.005ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.706ns = ( 21.219 - 19.512 ) 
+    Source Clock Delay      (SCD):    1.825ns
+    Clock Pessimism Removal (CPR):    0.114ns
+  Clock Uncertainty:      0.082ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.148ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           2.106     2.106    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.900    -2.793 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.697    -0.096    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.825     1.825    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X159Y136       FDCE (Prop_fdce_C_Q)         0.456     2.281 r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/Q
+                         net (fo=18, routed)          1.716     3.998    HdmixI/VgaxI/VgaControlerxI/HCountCtrl2StripxD[13]
+    SLICE_X159Y139       LUT4 (Prop_lut4_I0_O)        0.152     4.150 r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8/O
+                         net (fo=2, routed)           1.416     5.566    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8_n_0
+    SLICE_X163Y137       LUT5 (Prop_lut5_I0_O)        0.360     5.926 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5/O
+                         net (fo=1, routed)           0.267     6.192    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5_n_0
+    SLICE_X163Y137       LUT6 (Prop_lut6_I5_O)        0.332     6.524 f  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3/O
+                         net (fo=15, routed)          1.010     7.534    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3_n_0
+    SLICE_X159Y136       LUT2 (Prop_lut2_I1_O)        0.152     7.686 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[3]_i_1/O
+                         net (fo=1, routed)           0.000     7.686    HdmixI/VgaxI/VgaControlerxI/HCountxD_0[3]
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                     19.512    19.512 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.972    21.484    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.637    16.847 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.574    19.421    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.706    21.219    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[3]/C
+                         clock pessimism              0.114    21.333    
+                         clock uncertainty           -0.082    21.251    
+    SLICE_X159Y136       FDCE (Setup_fdce_C_D)        0.075    21.326    HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[3]
+  -------------------------------------------------------------------
+                         required time                         21.326    
+                         arrival time                          -7.686    
+  -------------------------------------------------------------------
+                         slack                                 13.639    
+
+Slack (MET) :             13.641ns  (required time - arrival time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[11]/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            19.512ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@19.512ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        5.859ns  (logic 1.452ns (24.782%)  route 4.407ns (75.218%))
+  Logic Levels:           4  (LUT2=1 LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.005ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.706ns = ( 21.219 - 19.512 ) 
+    Source Clock Delay      (SCD):    1.825ns
+    Clock Pessimism Removal (CPR):    0.114ns
+  Clock Uncertainty:      0.082ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.148ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           2.106     2.106    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.900    -2.793 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.697    -0.096    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.825     1.825    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X159Y136       FDCE (Prop_fdce_C_Q)         0.456     2.281 r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/Q
+                         net (fo=18, routed)          1.716     3.998    HdmixI/VgaxI/VgaControlerxI/HCountCtrl2StripxD[13]
+    SLICE_X159Y139       LUT4 (Prop_lut4_I0_O)        0.152     4.150 r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8/O
+                         net (fo=2, routed)           1.416     5.566    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8_n_0
+    SLICE_X163Y137       LUT5 (Prop_lut5_I0_O)        0.360     5.926 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5/O
+                         net (fo=1, routed)           0.267     6.192    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5_n_0
+    SLICE_X163Y137       LUT6 (Prop_lut6_I5_O)        0.332     6.524 f  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3/O
+                         net (fo=15, routed)          1.008     7.532    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3_n_0
+    SLICE_X159Y136       LUT2 (Prop_lut2_I1_O)        0.152     7.684 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[11]_i_1/O
+                         net (fo=1, routed)           0.000     7.684    HdmixI/VgaxI/VgaControlerxI/HCountxD_0[11]
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                     19.512    19.512 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.972    21.484    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.637    16.847 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.574    19.421    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.706    21.219    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[11]/C
+                         clock pessimism              0.114    21.333    
+                         clock uncertainty           -0.082    21.251    
+    SLICE_X159Y136       FDCE (Setup_fdce_C_D)        0.075    21.326    HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[11]
+  -------------------------------------------------------------------
+                         required time                         21.326    
+                         arrival time                          -7.684    
+  -------------------------------------------------------------------
+                         slack                                 13.641    
+
+Slack (MET) :             13.703ns  (required time - arrival time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            19.512ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@19.512ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        5.728ns  (logic 1.424ns (24.859%)  route 4.304ns (75.141%))
+  Logic Levels:           4  (LUT2=1 LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.030ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.706ns = ( 21.219 - 19.512 ) 
+    Source Clock Delay      (SCD):    1.825ns
+    Clock Pessimism Removal (CPR):    0.089ns
+  Clock Uncertainty:      0.082ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.148ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           2.106     2.106    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.900    -2.793 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.697    -0.096    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.825     1.825    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X159Y136       FDCE (Prop_fdce_C_Q)         0.456     2.281 r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/Q
+                         net (fo=18, routed)          1.716     3.998    HdmixI/VgaxI/VgaControlerxI/HCountCtrl2StripxD[13]
+    SLICE_X159Y139       LUT4 (Prop_lut4_I0_O)        0.152     4.150 r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8/O
+                         net (fo=2, routed)           1.416     5.566    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8_n_0
+    SLICE_X163Y137       LUT5 (Prop_lut5_I0_O)        0.360     5.926 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5/O
+                         net (fo=1, routed)           0.267     6.192    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5_n_0
+    SLICE_X163Y137       LUT6 (Prop_lut6_I5_O)        0.332     6.524 f  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3/O
+                         net (fo=15, routed)          0.906     7.430    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3_n_0
+    SLICE_X159Y135       LUT2 (Prop_lut2_I1_O)        0.124     7.554 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[1]_i_1/O
+                         net (fo=1, routed)           0.000     7.554    HdmixI/VgaxI/VgaControlerxI/HCountxD_0[1]
+    SLICE_X159Y135       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                     19.512    19.512 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.972    21.484    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.637    16.847 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.574    19.421    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.706    21.219    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y135       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[1]/C
+                         clock pessimism              0.089    21.308    
+                         clock uncertainty           -0.082    21.226    
+    SLICE_X159Y135       FDCE (Setup_fdce_C_D)        0.031    21.257    HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[1]
+  -------------------------------------------------------------------
+                         required time                         21.257    
+                         arrival time                          -7.554    
+  -------------------------------------------------------------------
+                         slack                                 13.703    
+
+Slack (MET) :             13.721ns  (required time - arrival time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[4]/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            19.512ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@19.512ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        5.754ns  (logic 1.450ns (25.198%)  route 4.304ns (74.802%))
+  Logic Levels:           4  (LUT2=1 LUT4=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.030ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.706ns = ( 21.219 - 19.512 ) 
+    Source Clock Delay      (SCD):    1.825ns
+    Clock Pessimism Removal (CPR):    0.089ns
+  Clock Uncertainty:      0.082ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.148ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           2.106     2.106    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.900    -2.793 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.697    -0.096    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.825     1.825    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y136       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X159Y136       FDCE (Prop_fdce_C_Q)         0.456     2.281 r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[13]/Q
+                         net (fo=18, routed)          1.716     3.998    HdmixI/VgaxI/VgaControlerxI/HCountCtrl2StripxD[13]
+    SLICE_X159Y139       LUT4 (Prop_lut4_I0_O)        0.152     4.150 r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8/O
+                         net (fo=2, routed)           1.416     5.566    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_8_n_0
+    SLICE_X163Y137       LUT5 (Prop_lut5_I0_O)        0.360     5.926 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5/O
+                         net (fo=1, routed)           0.267     6.192    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_5_n_0
+    SLICE_X163Y137       LUT6 (Prop_lut6_I5_O)        0.332     6.524 f  HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3/O
+                         net (fo=15, routed)          0.906     7.430    HdmixI/VgaxI/VgaControlerxI/HCountxD[15]_i_3_n_0
+    SLICE_X159Y135       LUT2 (Prop_lut2_I1_O)        0.150     7.580 r  HdmixI/VgaxI/VgaControlerxI/HCountxD[4]_i_1/O
+                         net (fo=1, routed)           0.000     7.580    HdmixI/VgaxI/VgaControlerxI/HCountxD_0[4]
+    SLICE_X159Y135       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                     19.512    19.512 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.972    21.484    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.637    16.847 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.574    19.421    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    19.512 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          1.706    21.219    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X159Y135       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[4]/C
+                         clock pessimism              0.089    21.308    
+                         clock uncertainty           -0.082    21.226    
+    SLICE_X159Y135       FDCE (Setup_fdce_C_D)        0.075    21.301    HdmixI/VgaxI/VgaControlerxI/HCountxD_reg[4]
+  -------------------------------------------------------------------
+                         required time                         21.301    
+                         arrival time                          -7.580    
+  -------------------------------------------------------------------
+                         slack                                 13.721    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.251ns  (arrival time - required time)
+  Source:                 ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[17]/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaToHdmixI/TmdsEncoderC0xI/TmdsEncodedDataxDO_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        0.359ns  (logic 0.186ns (51.864%)  route 0.173ns (48.136%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.920ns
+    Source Clock Delay      (SCD):    0.647ns
+    Clock Pessimism Removal (CPR):    0.257ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           0.745     0.745    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.683    -0.938 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.912    -0.026    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.647     0.647    ImageGeneratorxB.ImageGeneratorxI/ClkVgaxC
+    SLICE_X161Y141       FDCE                                         r  ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[17]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X161Y141       FDCE (Prop_fdce_C_Q)         0.141     0.788 r  ImageGeneratorxB.ImageGeneratorxI/DataxD_reg[17]/Q
+                         net (fo=38, routed)          0.173     0.960    ImageGeneratorxB.ImageGeneratorxI/Q[1]
+    SLICE_X163Y141       LUT6 (Prop_lut6_I0_O)        0.045     1.005 r  ImageGeneratorxB.ImageGeneratorxI/TmdsEncodedDataxDO[4]_i_1/O
+                         net (fo=1, routed)           0.000     1.005    HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DataxD_reg[19][4]
+    SLICE_X163Y141       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC0xI/TmdsEncodedDataxDO_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.022     1.022    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.040    -1.018 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.989    -0.029    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.920     0.920    HdmixI/VgaToHdmixI/TmdsEncoderC0xI/ClkVgaxC
+    SLICE_X163Y141       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC0xI/TmdsEncodedDataxDO_reg[4]/C
+                         clock pessimism             -0.257     0.663    
+    SLICE_X163Y141       FDRE (Hold_fdre_C_D)         0.092     0.755    HdmixI/VgaToHdmixI/TmdsEncoderC0xI/TmdsEncodedDataxDO_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -0.755    
+                         arrival time                           1.005    
+  -------------------------------------------------------------------
+                         slack                                  0.251    
+
+Slack (MET) :             0.263ns  (arrival time - required time)
+  Source:                 HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        0.354ns  (logic 0.186ns (52.507%)  route 0.168ns (47.493%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.920ns
+    Source Clock Delay      (SCD):    0.647ns
+    Clock Pessimism Removal (CPR):    0.273ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           0.745     0.745    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.683    -0.938 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.912    -0.026    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.647     0.647    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/ClkVgaxC
+    SLICE_X161Y142       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X161Y142       FDRE (Prop_fdre_C_Q)         0.141     0.788 r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[2]/Q
+                         net (fo=5, routed)           0.168     0.956    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/Q[1]
+    SLICE_X161Y142       LUT5 (Prop_lut5_I4_O)        0.045     1.001 r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD[2]_i_1__0/O
+                         net (fo=1, routed)           0.000     1.001    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD[2]_i_1__0_n_0
+    SLICE_X161Y142       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.022     1.022    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.040    -1.018 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.989    -0.029    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.920     0.920    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/ClkVgaxC
+    SLICE_X161Y142       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[2]/C
+                         clock pessimism             -0.273     0.647    
+    SLICE_X161Y142       FDRE (Hold_fdre_C_D)         0.091     0.738    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -0.738    
+                         arrival time                           1.001    
+  -------------------------------------------------------------------
+                         slack                                  0.263    
+
+Slack (MET) :             0.263ns  (arrival time - required time)
+  Source:                 HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        0.354ns  (logic 0.186ns (52.507%)  route 0.168ns (47.493%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.921ns
+    Source Clock Delay      (SCD):    0.648ns
+    Clock Pessimism Removal (CPR):    0.273ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           0.745     0.745    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.683    -0.938 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.912    -0.026    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.648     0.648    HdmixI/VgaToHdmixI/TmdsEncoderC0xI/ClkVgaxC
+    SLICE_X161Y143       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X161Y143       FDRE (Prop_fdre_C_Q)         0.141     0.789 r  HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[0]/Q
+                         net (fo=6, routed)           0.168     0.957    HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg_n_0_[0]
+    SLICE_X161Y143       LUT2 (Prop_lut2_I0_O)        0.045     1.002 r  HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD[0]_i_1__0/O
+                         net (fo=1, routed)           0.000     1.002    HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD[0]_i_1__0_n_0
+    SLICE_X161Y143       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.022     1.022    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.040    -1.018 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.989    -0.029    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.921     0.921    HdmixI/VgaToHdmixI/TmdsEncoderC0xI/ClkVgaxC
+    SLICE_X161Y143       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[0]/C
+                         clock pessimism             -0.273     0.648    
+    SLICE_X161Y143       FDRE (Hold_fdre_C_D)         0.091     0.739    HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -0.739    
+                         arrival time                           1.002    
+  -------------------------------------------------------------------
+                         slack                                  0.263    
+
+Slack (MET) :             0.263ns  (arrival time - required time)
+  Source:                 HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        0.354ns  (logic 0.186ns (52.507%)  route 0.168ns (47.493%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.921ns
+    Source Clock Delay      (SCD):    0.648ns
+    Clock Pessimism Removal (CPR):    0.273ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           0.745     0.745    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.683    -0.938 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.912    -0.026    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.648     0.648    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/ClkVgaxC
+    SLICE_X163Y143       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X163Y143       FDRE (Prop_fdre_C_Q)         0.141     0.789 r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[1]/Q
+                         net (fo=4, routed)           0.168     0.957    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg_n_0_[1]
+    SLICE_X163Y143       LUT5 (Prop_lut5_I0_O)        0.045     1.002 r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD[1]_i_1__1/O
+                         net (fo=1, routed)           0.000     1.002    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD[1]_i_1__1_n_0
+    SLICE_X163Y143       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.022     1.022    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.040    -1.018 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.989    -0.029    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.921     0.921    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/ClkVgaxC
+    SLICE_X163Y143       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[1]/C
+                         clock pessimism             -0.273     0.648    
+    SLICE_X163Y143       FDRE (Hold_fdre_C_D)         0.091     0.739    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/DcBiasxD_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -0.739    
+                         arrival time                           1.002    
+  -------------------------------------------------------------------
+                         slack                                  0.263    
+
+Slack (MET) :             0.263ns  (arrival time - required time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/VgaSyncxS_reg[HSyncxS]__0/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaxI/VgaControlerxI/VgaSyncxS_reg[HSyncxS]__0/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        0.354ns  (logic 0.186ns (52.498%)  route 0.168ns (47.502%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.919ns
+    Source Clock Delay      (SCD):    0.646ns
+    Clock Pessimism Removal (CPR):    0.273ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           0.745     0.745    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.683    -0.938 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.912    -0.026    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.646     0.646    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X163Y139       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS_reg[HSyncxS]__0/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X163Y139       FDCE (Prop_fdce_C_Q)         0.141     0.787 r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS_reg[HSyncxS]__0/Q
+                         net (fo=10, routed)          0.168     0.955    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS_reg[HSyncxS]
+    SLICE_X163Y139       LUT5 (Prop_lut5_I4_O)        0.045     1.000 r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_1/O
+                         net (fo=1, routed)           0.000     1.000    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS[HSyncxS]_i_1_n_0
+    SLICE_X163Y139       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS_reg[HSyncxS]__0/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.022     1.022    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.040    -1.018 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.989    -0.029    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.919     0.919    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X163Y139       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/VgaSyncxS_reg[HSyncxS]__0/C
+                         clock pessimism             -0.273     0.646    
+    SLICE_X163Y139       FDCE (Hold_fdce_C_D)         0.091     0.737    HdmixI/VgaxI/VgaControlerxI/VgaSyncxS_reg[HSyncxS]__0
+  -------------------------------------------------------------------
+                         required time                         -0.737    
+                         arrival time                           1.000    
+  -------------------------------------------------------------------
+                         slack                                  0.263    
+
+Slack (MET) :             0.265ns  (arrival time - required time)
+  Source:                 HdmixI/VgaToHdmixI/TmdsEncoderC2xI/DcBiasxD_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        0.371ns  (logic 0.186ns (50.109%)  route 0.185ns (49.891%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.915ns
+    Source Clock Delay      (SCD):    0.643ns
+    Clock Pessimism Removal (CPR):    0.257ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           0.745     0.745    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.683    -0.938 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.912    -0.026    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.643     0.643    HdmixI/VgaToHdmixI/TmdsEncoderC2xI/ClkVgaxC
+    SLICE_X160Y133       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC2xI/DcBiasxD_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X160Y133       FDRE (Prop_fdre_C_Q)         0.141     0.784 r  HdmixI/VgaToHdmixI/TmdsEncoderC2xI/DcBiasxD_reg[3]/Q
+                         net (fo=6, routed)           0.185     0.969    HdmixI/VgaToHdmixI/TmdsEncoderC2xI/Q[3]
+    SLICE_X161Y134       LUT5 (Prop_lut5_I1_O)        0.045     1.014 r  HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO[5]_i_1/O
+                         net (fo=1, routed)           0.000     1.014    HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO[5]_i_1_n_0
+    SLICE_X161Y134       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.022     1.022    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.040    -1.018 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.989    -0.029    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.915     0.915    HdmixI/VgaToHdmixI/TmdsEncoderC2xI/ClkVgaxC
+    SLICE_X161Y134       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[5]/C
+                         clock pessimism             -0.257     0.658    
+    SLICE_X161Y134       FDRE (Hold_fdre_C_D)         0.091     0.749    HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -0.749    
+                         arrival time                           1.014    
+  -------------------------------------------------------------------
+                         slack                                  0.265    
+
+Slack (MET) :             0.268ns  (arrival time - required time)
+  Source:                 HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEncodedDataxDO_reg[8]/C
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaToHdmixI/SerializerChannel1xI/SlaveOSERDESE2xI/D3
+                            (rising edge-triggered cell OSERDESE2 clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        0.321ns  (logic 0.141ns (43.989%)  route 0.180ns (56.012%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.034ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.912ns
+    Source Clock Delay      (SCD):    0.644ns
+    Clock Pessimism Removal (CPR):    0.234ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           0.745     0.745    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.683    -0.938 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.912    -0.026    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.644     0.644    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/ClkVgaxC
+    SLICE_X163Y135       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEncodedDataxDO_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X163Y135       FDRE (Prop_fdre_C_Q)         0.141     0.785 r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEncodedDataxDO_reg[8]/Q
+                         net (fo=1, routed)           0.180     0.964    HdmixI/VgaToHdmixI/SerializerChannel1xI/TmdsDataxDI[4]
+    OLOGIC_X1Y135        OSERDESE2                                    r  HdmixI/VgaToHdmixI/SerializerChannel1xI/SlaveOSERDESE2xI/D3
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.022     1.022    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.040    -1.018 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.989    -0.029    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.912     0.912    HdmixI/VgaToHdmixI/SerializerChannel1xI/ClkVgaxC
+    OLOGIC_X1Y135        OSERDESE2                                    r  HdmixI/VgaToHdmixI/SerializerChannel1xI/SlaveOSERDESE2xI/CLKDIV
+                         clock pessimism             -0.234     0.678    
+    OLOGIC_X1Y135        OSERDESE2 (Hold_oserdese2_CLKDIV_D3)
+                                                      0.019     0.697    HdmixI/VgaToHdmixI/SerializerChannel1xI/SlaveOSERDESE2xI
+  -------------------------------------------------------------------
+                         required time                         -0.697    
+                         arrival time                           0.964    
+  -------------------------------------------------------------------
+                         slack                                  0.268    
+
+Slack (MET) :             0.268ns  (arrival time - required time)
+  Source:                 HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEncodedDataxDO_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaToHdmixI/SerializerChannel1xI/SlaveOSERDESE2xI/D4
+                            (rising edge-triggered cell OSERDESE2 clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        0.321ns  (logic 0.141ns (43.989%)  route 0.180ns (56.012%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.034ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.912ns
+    Source Clock Delay      (SCD):    0.644ns
+    Clock Pessimism Removal (CPR):    0.234ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           0.745     0.745    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.683    -0.938 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.912    -0.026    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.644     0.644    HdmixI/VgaToHdmixI/TmdsEncoderC1xI/ClkVgaxC
+    SLICE_X163Y135       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEncodedDataxDO_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X163Y135       FDRE (Prop_fdre_C_Q)         0.141     0.785 r  HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEncodedDataxDO_reg[9]/Q
+                         net (fo=1, routed)           0.180     0.964    HdmixI/VgaToHdmixI/SerializerChannel1xI/TmdsDataxDI[5]
+    OLOGIC_X1Y135        OSERDESE2                                    r  HdmixI/VgaToHdmixI/SerializerChannel1xI/SlaveOSERDESE2xI/D4
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.022     1.022    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.040    -1.018 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.989    -0.029    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.912     0.912    HdmixI/VgaToHdmixI/SerializerChannel1xI/ClkVgaxC
+    OLOGIC_X1Y135        OSERDESE2                                    r  HdmixI/VgaToHdmixI/SerializerChannel1xI/SlaveOSERDESE2xI/CLKDIV
+                         clock pessimism             -0.234     0.678    
+    OLOGIC_X1Y135        OSERDESE2 (Hold_oserdese2_CLKDIV_D4)
+                                                      0.019     0.697    HdmixI/VgaToHdmixI/SerializerChannel1xI/SlaveOSERDESE2xI
+  -------------------------------------------------------------------
+                         required time                         -0.697    
+                         arrival time                           0.964    
+  -------------------------------------------------------------------
+                         slack                                  0.268    
+
+Slack (MET) :             0.268ns  (arrival time - required time)
+  Source:                 HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaToHdmixI/SerializerChannel2xI/MasterOSERDESE2xI/D7
+                            (rising edge-triggered cell OSERDESE2 clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        0.321ns  (logic 0.141ns (43.989%)  route 0.180ns (56.012%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.034ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.912ns
+    Source Clock Delay      (SCD):    0.644ns
+    Clock Pessimism Removal (CPR):    0.234ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           0.745     0.745    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.683    -0.938 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.912    -0.026    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.644     0.644    HdmixI/VgaToHdmixI/TmdsEncoderC2xI/ClkVgaxC
+    SLICE_X163Y134       FDRE                                         r  HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X163Y134       FDRE (Prop_fdre_C_Q)         0.141     0.785 r  HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[6]/Q
+                         net (fo=1, routed)           0.180     0.964    HdmixI/VgaToHdmixI/SerializerChannel2xI/TmdsDataxDI[4]
+    OLOGIC_X1Y134        OSERDESE2                                    r  HdmixI/VgaToHdmixI/SerializerChannel2xI/MasterOSERDESE2xI/D7
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.022     1.022    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.040    -1.018 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.989    -0.029    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.912     0.912    HdmixI/VgaToHdmixI/SerializerChannel2xI/ClkVgaxC
+    OLOGIC_X1Y134        OSERDESE2                                    r  HdmixI/VgaToHdmixI/SerializerChannel2xI/MasterOSERDESE2xI/CLKDIV
+                         clock pessimism             -0.234     0.678    
+    OLOGIC_X1Y134        OSERDESE2 (Hold_oserdese2_CLKDIV_D7)
+                                                      0.019     0.697    HdmixI/VgaToHdmixI/SerializerChannel2xI/MasterOSERDESE2xI
+  -------------------------------------------------------------------
+                         required time                         -0.697    
+                         arrival time                           0.964    
+  -------------------------------------------------------------------
+                         slack                                  0.268    
+
+Slack (MET) :             0.275ns  (arrival time - required time)
+  Source:                 HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/C
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Destination:            HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/D
+                            (rising edge-triggered cell FDCE clocked by ClkVgaxC_clk_vga_hdmi_1024x600  {rise@0.000ns fall@9.756ns period=19.512ns})
+  Path Group:             ClkVgaxC_clk_vga_hdmi_1024x600
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns - ClkVgaxC_clk_vga_hdmi_1024x600 rise@0.000ns)
+  Data Path Delay:        0.366ns  (logic 0.186ns (50.768%)  route 0.180ns (49.232%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.919ns
+    Source Clock Delay      (SCD):    0.646ns
+    Clock Pessimism Removal (CPR):    0.273ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           0.745     0.745    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.683    -0.938 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.912    -0.026    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.646     0.646    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X157Y140       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X157Y140       FDCE (Prop_fdce_C_Q)         0.141     0.787 r  HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/Q
+                         net (fo=189, routed)         0.180     0.967    HdmixI/VgaxI/VgaControlerxI/DataxD_reg[19]
+    SLICE_X157Y140       LUT6 (Prop_lut6_I5_O)        0.045     1.012 r  HdmixI/VgaxI/VgaControlerxI/VidOnxS_i_1/O
+                         net (fo=1, routed)           0.000     1.012    HdmixI/VgaxI/VgaControlerxI/VidOnxS_i_1_n_0
+    SLICE_X157Y140       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ClkVgaxC_clk_vga_hdmi_1024x600 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y2        BUFG                         0.000     0.000 r  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O
+                         net (fo=1, routed)           1.022     1.022    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkSys100MhzxC
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.040    -1.018 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.989    -0.029    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/ClkVgaxC_clk_vga_hdmi_1024x600
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -0.000 r  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/O
+                         net (fo=82, routed)          0.919     0.919    HdmixI/VgaxI/VgaControlerxI/ClkVgaxC
+    SLICE_X157Y140       FDCE                                         r  HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg/C
+                         clock pessimism             -0.273     0.646    
+    SLICE_X157Y140       FDCE (Hold_fdce_C_D)         0.091     0.737    HdmixI/VgaxI/VgaControlerxI/VidOnxS_reg
+  -------------------------------------------------------------------
+                         required time                         -0.737    
+                         arrival time                           1.012    
+  -------------------------------------------------------------------
+                         slack                                  0.275    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         ClkVgaxC_clk_vga_hdmi_1024x600
+Waveform(ns):       { 0.000 9.756 }
+Period(ns):         19.512
+Sources:            { HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0 }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     BUFG/I              n/a            2.155         19.512      17.357     BUFGCTRL_X0Y0    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkout1_buf/I
+Min Period        n/a     OSERDESE2/CLKDIV    n/a            1.667         19.512      17.845     OLOGIC_X1Y136    HdmixI/VgaToHdmixI/SerializerChannel1xI/MasterOSERDESE2xI/CLKDIV
+Min Period        n/a     OSERDESE2/CLKDIV    n/a            1.667         19.512      17.845     OLOGIC_X1Y135    HdmixI/VgaToHdmixI/SerializerChannel1xI/SlaveOSERDESE2xI/CLKDIV
+Min Period        n/a     OSERDESE2/CLKDIV    n/a            1.667         19.512      17.845     OLOGIC_X1Y134    HdmixI/VgaToHdmixI/SerializerChannel2xI/MasterOSERDESE2xI/CLKDIV
+Min Period        n/a     OSERDESE2/CLKDIV    n/a            1.667         19.512      17.845     OLOGIC_X1Y133    HdmixI/VgaToHdmixI/SerializerChannel2xI/SlaveOSERDESE2xI/CLKDIV
+Min Period        n/a     OSERDESE2/CLKDIV    n/a            1.667         19.512      17.845     OLOGIC_X1Y140    HdmixI/VgaToHdmixI/SerializerChannel0xI/MasterOSERDESE2xI/CLKDIV
+Min Period        n/a     OSERDESE2/CLKDIV    n/a            1.667         19.512      17.845     OLOGIC_X1Y139    HdmixI/VgaToHdmixI/SerializerChannel0xI/SlaveOSERDESE2xI/CLKDIV
+Min Period        n/a     OSERDESE2/CLKDIV    n/a            1.667         19.512      17.845     OLOGIC_X1Y148    HdmixI/VgaToHdmixI/SerializerChannel3xI/MasterOSERDESE2xI/CLKDIV
+Min Period        n/a     OSERDESE2/CLKDIV    n/a            1.667         19.512      17.845     OLOGIC_X1Y147    HdmixI/VgaToHdmixI/SerializerChannel3xI/SlaveOSERDESE2xI/CLKDIV
+Min Period        n/a     MMCME2_ADV/CLKOUT0  n/a            1.249         19.512      18.263     MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       19.512      193.848    MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKOUT0
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X163Y141   HdmixI/VgaToHdmixI/TmdsEncoderC0xI/TmdsEncodedDataxDO_reg[0]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X162Y140   HdmixI/VgaToHdmixI/TmdsEncoderC0xI/TmdsEncodedDataxDO_reg[1]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         9.756       9.256      SLICE_X156Y143   HdmixI/VgaxI/VgaControlerxI/VCountxD_reg[12]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         9.756       9.256      SLICE_X156Y143   HdmixI/VgaxI/VgaControlerxI/VCountxD_reg[13]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         9.756       9.256      SLICE_X158Y143   HdmixI/VgaxI/VgaControlerxI/VCountxD_reg[14]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         9.756       9.256      SLICE_X158Y143   HdmixI/VgaxI/VgaControlerxI/VCountxD_reg[15]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         9.756       9.256      SLICE_X159Y141   HdmixI/VgaxI/VgaControlerxI/VCountxD_reg[1]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         9.756       9.256      SLICE_X159Y141   HdmixI/VgaxI/VgaControlerxI/VCountxD_reg[2]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         9.756       9.256      SLICE_X159Y141   HdmixI/VgaxI/VgaControlerxI/VCountxD_reg[3]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         9.756       9.256      SLICE_X156Y141   HdmixI/VgaxI/VgaControlerxI/VCountxD_reg[4]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X161Y143   HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[0]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X162Y144   HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[1]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X163Y144   HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[2]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X163Y144   HdmixI/VgaToHdmixI/TmdsEncoderC0xI/DcBiasxD_reg[3]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X163Y141   HdmixI/VgaToHdmixI/TmdsEncoderC0xI/TmdsEncodedDataxDO_reg[0]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X162Y140   HdmixI/VgaToHdmixI/TmdsEncoderC0xI/TmdsEncodedDataxDO_reg[1]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X160Y134   HdmixI/VgaToHdmixI/TmdsEncoderC2xI/DcBiasxD_reg[0]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X160Y133   HdmixI/VgaToHdmixI/TmdsEncoderC2xI/DcBiasxD_reg[1]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X160Y132   HdmixI/VgaToHdmixI/TmdsEncoderC2xI/DcBiasxD_reg[2]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         9.756       9.256      SLICE_X160Y133   HdmixI/VgaToHdmixI/TmdsEncoderC2xI/DcBiasxD_reg[3]/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clkfbout_clk_vga_hdmi_1024x600
+  To Clock:  clkfbout_clk_vga_hdmi_1024x600
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        7.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clkfbout_clk_vga_hdmi_1024x600
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKFBOUT }
+
+Check Type  Corner  Lib Pin              Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period  n/a     BUFG/I               n/a            2.155         10.000      7.845      BUFGCTRL_X0Y3    HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/clkf_buf/I
+Min Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            1.249         10.000      8.751      MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKFBOUT
+Min Period  n/a     MMCME2_ADV/CLKFBIN   n/a            1.249         10.000      8.751      MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKFBIN
+Max Period  n/a     MMCME2_ADV/CLKFBIN   n/a            100.000       10.000      90.000     MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKFBIN
+Max Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            213.360       10.000      203.360    MMCME2_ADV_X1Y0  HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/inst/mmcm_adv_inst/CLKFBOUT
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        7.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { ClkSys100MhzxC }
+
+Check Type  Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
+Min Period  n/a     BUFG/I   n/a            2.155         10.000      7.845      BUFGCTRL_X0Y2  HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/I
+
+
+
