@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1520354846">
-  <File Type="VDS-TIMING-PB" Name="mse_mandelbrot_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="mse_mandelbrot_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="mse_mandelbrot.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="mse_mandelbrot_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="mse_mandelbrot_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="mse_mandelbrot_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="mse_mandelbrot.vds"/>
-  <File Type="REPORTS-TCL" Name="mse_mandelbrot_reports.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1522170545">
   <File Type="PA-TCL" Name="mse_mandelbrot.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="mse_mandelbrot_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="mse_mandelbrot_reports.tcl"/>
+  <File Type="RDS-RDS" Name="mse_mandelbrot.vds"/>
+  <File Type="RDS-UTIL" Name="mse_mandelbrot_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="mse_mandelbrot_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="mse_mandelbrot.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="mse_mandelbrot_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="mse_mandelbrot_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/ip/hdl/src/hdmi_interface_pkg.vhd">
@@ -87,6 +87,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/mandelbrot_calculator.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="mse_mandelbrot"/>
@@ -107,7 +114,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="clk_vga_hdmi_1024x600"/>

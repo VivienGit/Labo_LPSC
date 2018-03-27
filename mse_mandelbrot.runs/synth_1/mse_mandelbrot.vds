@@ -1,13 +1,13 @@
 #-----------------------------------------------------------
 # Vivado v2017.4 (64-bit)
-# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue Mar  6 17:47:28 2018
-# Process ID: 6248
-# Current directory: /home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1
-# Command line: vivado -log mse_mandelbrot.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mse_mandelbrot.tcl
-# Log file: /home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/mse_mandelbrot.vds
-# Journal file: /home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/vivado.jou
+# Start of session at: Tue Mar 27 19:09:13 2018
+# Process ID: 18072
+# Current directory: C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1
+# Command line: vivado.exe -log mse_mandelbrot.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mse_mandelbrot.tcl
+# Log file: C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/mse_mandelbrot.vds
+# Journal file: C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source mse_mandelbrot.tcl -notrace
 Command: synth_design -top mse_mandelbrot -part xc7a200tsbg484-1
@@ -15,43 +15,43 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6257 
+INFO: Helper process launched with PID 18092 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1309.883 ; gain = 84.973 ; free physical = 905 ; free virtual = 9025
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 339.574 ; gain = 93.715
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'mse_mandelbrot' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/mse_mandelbrot.vhd:51]
+INFO: [Synth 8-638] synthesizing module 'mse_mandelbrot' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/mse_mandelbrot.vhd:51]
 	Parameter C_CHANNEL_NUMBER bound to: 4 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'hdmi' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'hdmi' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:62]
 	Parameter C_CHANNEL_NUMBER bound to: 4 - type: integer 
 	Parameter C_DATA_SIZE bound to: 16 - type: integer 
 	Parameter C_PIXEL_SIZE bound to: 8 - type: integer 
 	Parameter C_VGA_CONFIG bound to: 192'b000001000000000000000010010110000000000010100000000000001000110000000000000011000000000000010100000000000001010000000000000000110000010101000000000000100111101100000000000000000000000000000000 
 	Parameter C_RESOLUTION bound to: 1024x600 - type: string 
-INFO: [Synth 8-113] binding component instance 'BUFGClkSysToClkVgaHdmixI' to cell 'BUFG' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:363]
-INFO: [Synth 8-3491] module 'clk_vga_hdmi_1024x600' declared at '/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-6248-t450s-debian/realtime/clk_vga_hdmi_1024x600_stub.vhdl:5' bound to instance 'ClkVgaHdmi1024x600xI' of component 'clk_vga_hdmi_1024x600' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:380]
-INFO: [Synth 8-638] synthesizing module 'clk_vga_hdmi_1024x600' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-6248-t450s-debian/realtime/clk_vga_hdmi_1024x600_stub.vhdl:16]
-INFO: [Synth 8-638] synthesizing module 'vga' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga.vhd:47]
+INFO: [Synth 8-113] binding component instance 'BUFGClkSysToClkVgaHdmixI' to cell 'BUFG' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:363]
+INFO: [Synth 8-3491] module 'clk_vga_hdmi_1024x600' declared at 'C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-18072-Vivien-HP/realtime/clk_vga_hdmi_1024x600_stub.vhdl:5' bound to instance 'ClkVgaHdmi1024x600xI' of component 'clk_vga_hdmi_1024x600' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:380]
+INFO: [Synth 8-638] synthesizing module 'clk_vga_hdmi_1024x600' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-18072-Vivien-HP/realtime/clk_vga_hdmi_1024x600_stub.vhdl:16]
+INFO: [Synth 8-638] synthesizing module 'vga' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga.vhd:47]
 	Parameter C_DATA_SIZE bound to: 16 - type: integer 
 	Parameter C_PIXEL_SIZE bound to: 8 - type: integer 
 	Parameter C_VGA_CONFIG bound to: 192'b000001000000000000000010010110000000000010100000000000001000110000000000000011000000000000010100000000000001010000000000000000110000010101000000000000100111101100000000000000000000000000000000 
-INFO: [Synth 8-638] synthesizing module 'vga_stripes' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga_stripes.vhd:46]
+INFO: [Synth 8-638] synthesizing module 'vga_stripes' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga_stripes.vhd:46]
 	Parameter C_DATA_SIZE bound to: 16 - type: integer 
 	Parameter C_PIXEL_SIZE bound to: 8 - type: integer 
 	Parameter C_VGA_CONFIG bound to: 192'b000001000000000000000010010110000000000010100000000000001000110000000000000011000000000000010100000000000001010000000000000000110000010101000000000000100111101100000000000000000000000000000000 
-INFO: [Synth 8-256] done synthesizing module 'vga_stripes' (1#1) [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga_stripes.vhd:46]
-INFO: [Synth 8-638] synthesizing module 'vga_controler' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga_controler.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'vga_stripes' (1#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga_stripes.vhd:46]
+INFO: [Synth 8-638] synthesizing module 'vga_controler' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga_controler.vhd:45]
 	Parameter C_DATA_SIZE bound to: 16 - type: integer 
 	Parameter C_VGA_CONFIG bound to: 192'b000001000000000000000010010110000000000010100000000000001000110000000000000011000000000000010100000000000001010000000000000000110000010101000000000000100111101100000000000000000000000000000000 
-INFO: [Synth 8-256] done synthesizing module 'vga_controler' (2#1) [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga_controler.vhd:45]
-INFO: [Synth 8-256] done synthesizing module 'vga' (3#1) [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga.vhd:47]
-INFO: [Synth 8-638] synthesizing module 'vga_to_hdmi' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'vga_controler' (2#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga_controler.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'vga' (3#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'vga_to_hdmi' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:47]
 	Parameter C_PIXEL_SIZE bound to: 8 - type: integer 
 	Parameter C_CHANNEL_NUMBER bound to: 4 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'tmds_encoder' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'tmds_encoder' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:43]
 	Parameter C_TMDS_DATA_SIZE bound to: 8 - type: integer 
 	Parameter C_TMDS_ENCODED_DATA_SIZE bound to: 10 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'tmds_encoder' (4#1) [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:43]
-INFO: [Synth 8-638] synthesizing module 'serializer_10_to_1' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/serializer_10_to_1.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'tmds_encoder' (4#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'serializer_10_to_1' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/serializer_10_to_1.vhd:45]
 	Parameter C_TMDS_ENCODED_DATA_SIZE bound to: 10 - type: integer 
 	Parameter DATA_RATE_OQ bound to: DDR - type: string 
 	Parameter DATA_RATE_TQ bound to: DDR - type: string 
@@ -78,7 +78,7 @@ INFO: [Synth 8-638] synthesizing module 'serializer_10_to_1' [/home/joco/Documen
 	Parameter TBYTE_CTL bound to: FALSE - type: string 
 	Parameter TBYTE_SRC bound to: FALSE - type: string 
 	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-113] binding component instance 'MasterOSERDESE2xI' to cell 'OSERDESE2' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/serializer_10_to_1.vhd:62]
+INFO: [Synth 8-113] binding component instance 'MasterOSERDESE2xI' to cell 'OSERDESE2' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/serializer_10_to_1.vhd:62]
 	Parameter DATA_RATE_OQ bound to: DDR - type: string 
 	Parameter DATA_RATE_TQ bound to: DDR - type: string 
 	Parameter DATA_WIDTH bound to: 10 - type: integer 
@@ -104,34 +104,34 @@ INFO: [Synth 8-113] binding component instance 'MasterOSERDESE2xI' to cell 'OSER
 	Parameter TBYTE_CTL bound to: FALSE - type: string 
 	Parameter TBYTE_SRC bound to: FALSE - type: string 
 	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-113] binding component instance 'SlaveOSERDESE2xI' to cell 'OSERDESE2' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/serializer_10_to_1.vhd:108]
-INFO: [Synth 8-256] done synthesizing module 'serializer_10_to_1' (5#1) [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/serializer_10_to_1.vhd:45]
+INFO: [Synth 8-113] binding component instance 'SlaveOSERDESE2xI' to cell 'OSERDESE2' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/serializer_10_to_1.vhd:108]
+INFO: [Synth 8-256] done synthesizing module 'serializer_10_to_1' (5#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/serializer_10_to_1.vhd:45]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
 	Parameter SLEW bound to: FAST - type: string 
-INFO: [Synth 8-113] binding component instance 'OBUFDSHdmiTxCh0xI' to cell 'OBUFDS' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:207]
+INFO: [Synth 8-113] binding component instance 'OBUFDSHdmiTxCh0xI' to cell 'OBUFDS' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:207]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
 	Parameter SLEW bound to: FAST - type: string 
-INFO: [Synth 8-113] binding component instance 'OBUFDSHdmiTxCh1xI' to cell 'OBUFDS' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:216]
+INFO: [Synth 8-113] binding component instance 'OBUFDSHdmiTxCh1xI' to cell 'OBUFDS' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:216]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
 	Parameter SLEW bound to: FAST - type: string 
-INFO: [Synth 8-113] binding component instance 'OBUFDSHdmiTxCh2xI' to cell 'OBUFDS' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:225]
+INFO: [Synth 8-113] binding component instance 'OBUFDSHdmiTxCh2xI' to cell 'OBUFDS' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:225]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
 	Parameter SLEW bound to: FAST - type: string 
-INFO: [Synth 8-113] binding component instance 'OBUFDSHdmiTxClkxI' to cell 'OBUFDS' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:234]
-INFO: [Synth 8-256] done synthesizing module 'vga_to_hdmi' (6#1) [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:47]
-INFO: [Synth 8-256] done synthesizing module 'hdmi' (7#1) [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:62]
-INFO: [Synth 8-638] synthesizing module 'image_generator' [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/image_generator.vhd:46]
+INFO: [Synth 8-113] binding component instance 'OBUFDSHdmiTxClkxI' to cell 'OBUFDS' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:234]
+INFO: [Synth 8-256] done synthesizing module 'vga_to_hdmi' (6#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga_to_hdmi.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'hdmi' (7#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'image_generator' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/image_generator.vhd:46]
 	Parameter C_DATA_SIZE bound to: 16 - type: integer 
 	Parameter C_PIXEL_SIZE bound to: 8 - type: integer 
 	Parameter C_VGA_CONFIG bound to: 192'b000001000000000000000010010110000000000010100000000000001000110000000000000011000000000000010100000000000001010000000000000000110000010101000000000000100111101100000000000000000000000000000000 
-INFO: [Synth 8-256] done synthesizing module 'image_generator' (8#1) [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/image_generator.vhd:46]
-INFO: [Synth 8-256] done synthesizing module 'mse_mandelbrot' (9#1) [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/mse_mandelbrot.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'image_generator' (8#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/image_generator.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'mse_mandelbrot' (9#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/mse_mandelbrot.vhd:51]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1353.414 ; gain = 128.504 ; free physical = 914 ; free virtual = 9035
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 392.363 ; gain = 146.504
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -141,7 +141,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1353.414 ; gain = 128.504 ; free physical = 914 ; free virtual = 9035
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 392.363 ; gain = 146.504
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -150,44 +150,44 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-6248-t450s-debian/dcp1/clk_vga_hdmi_1024x600_in_context.xdc] for cell 'HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI'
-Finished Parsing XDC File [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-6248-t450s-debian/dcp1/clk_vga_hdmi_1024x600_in_context.xdc] for cell 'HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI'
-Parsing XDC File [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc]
-Finished Parsing XDC File [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mse_mandelbrot_propImpl.xdc].
+Parsing XDC File [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-18072-Vivien-HP/dcp1/clk_vga_hdmi_1024x600_in_context.xdc] for cell 'HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI'
+Finished Parsing XDC File [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-18072-Vivien-HP/dcp1/clk_vga_hdmi_1024x600_in_context.xdc] for cell 'HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI'
+Parsing XDC File [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc]
+Finished Parsing XDC File [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mse_mandelbrot_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/mse_mandelbrot_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1736.465 ; gain = 0.000 ; free physical = 619 ; free virtual = 8740
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 774.484 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:36 . Memory (MB): peak = 1736.465 ; gain = 511.555 ; free physical = 688 ; free virtual = 8817
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 774.484 ; gain = 528.625
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:36 . Memory (MB): peak = 1736.465 ; gain = 511.555 ; free physical = 688 ; free virtual = 8817
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 774.484 ; gain = 528.625
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for HdmixI/\ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI . (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:36 . Memory (MB): peak = 1736.465 ; gain = 511.555 ; free physical = 690 ; free virtual = 8819
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 774.484 ; gain = 528.625
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "VCountxD" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "VgaSyncxS[HSyncxS]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "VgaSyncxS[VSyncxS]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:204]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:205]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:126]
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:122]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:204]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:205]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:126]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:122]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:36 . Memory (MB): peak = 1736.465 ; gain = 511.555 ; free physical = 682 ; free virtual = 8811
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 774.484 ; gain = 528.625
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -317,7 +317,7 @@ INFO: [Synth 8-3886] merging instance 'HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEn
 INFO: [Synth 8-3886] merging instance 'HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEncodedDataxDO_reg[1]' (FD) to 'HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEncodedDataxDO_reg[0]'
 INFO: [Synth 8-3886] merging instance 'HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[4]' (FD) to 'HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[2]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:38 . Memory (MB): peak = 1736.465 ; gain = 511.555 ; free physical = 642 ; free virtual = 8783
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 774.484 ; gain = 528.625
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -335,13 +335,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'HdmixI/ClkVgaHdmi1024x600
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/ClkSys100MhzxC' to 'HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O'
 INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:47 . Memory (MB): peak = 1736.465 ; gain = 511.555 ; free physical = 520 ; free virtual = 8661
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 782.773 ; gain = 536.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 1744.473 ; gain = 519.562 ; free physical = 508 ; free virtual = 8649
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 824.496 ; gain = 578.637
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -353,7 +353,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 1752.480 ; gain = 527.570 ; free physical = 509 ; free virtual = 8650
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 833.520 ; gain = 587.660
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -377,7 +377,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 1752.480 ; gain = 527.570 ; free physical = 509 ; free virtual = 8650
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -390,7 +390,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 1752.480 ; gain = 527.570 ; free physical = 509 ; free virtual = 8650
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -402,25 +402,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 1752.480 ; gain = 527.570 ; free physical = 509 ; free virtual = 8650
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 1752.480 ; gain = 527.570 ; free physical = 509 ; free virtual = 8650
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 1752.480 ; gain = 527.570 ; free physical = 509 ; free virtual = 8650
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 1752.480 ; gain = 527.570 ; free physical = 509 ; free virtual = 8650
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -476,11 +476,11 @@ Report Instance Areas:
 |13    |  \ImageGeneratorxB.ImageGeneratorxI  |image_generator      |    63|
 +------+--------------------------------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 1752.480 ; gain = 527.570 ; free physical = 509 ; free virtual = 8650
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1752.480 ; gain = 144.520 ; free physical = 561 ; free virtual = 8702
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 1752.488 ; gain = 527.570 ; free physical = 561 ; free virtual = 8702
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 833.520 ; gain = 205.539
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 833.520 ; gain = 587.660
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -492,8 +492,8 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 84 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:51 . Memory (MB): peak = 1752.488 ; gain = 552.430 ; free physical = 557 ; free virtual = 8698
-INFO: [Common 17-1381] The checkpoint '/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/mse_mandelbrot.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 833.520 ; gain = 599.316
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/mse_mandelbrot.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mse_mandelbrot_utilization_synth.rpt -pb mse_mandelbrot_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.23 . Memory (MB): peak = 1776.492 ; gain = 0.000 ; free physical = 557 ; free virtual = 8699
-INFO: [Common 17-206] Exiting Vivado at Tue Mar  6 17:48:33 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.280 . Memory (MB): peak = 833.520 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 27 19:10:07 2018...

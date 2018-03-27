@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:/home/joco/Documents/cours/FPGA/master/nexys_video/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc rfile:../../../constr/Nexys-Video-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc rfile:../../../constr/Nexys-Video-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN R4 IOSTANDARD LVCMOS33} [get_ports ClkSys100MhzxC]
 set_property src_info {type:XDC file:1 line:41 export:INPUT save:INPUT read:READ} [current_design]
