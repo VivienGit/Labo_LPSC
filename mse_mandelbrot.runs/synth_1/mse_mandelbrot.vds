@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue Mar 27 19:09:13 2018
-# Process ID: 18072
+# Start of session at: Wed Mar 28 13:16:29 2018
+# Process ID: 20068
 # Current directory: C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1
 # Command line: vivado.exe -log mse_mandelbrot.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mse_mandelbrot.tcl
 # Log file: C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/mse_mandelbrot.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18092 
+INFO: Helper process launched with PID 20024 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 339.574 ; gain = 93.715
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 339.594 ; gain = 93.707
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'mse_mandelbrot' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/mse_mandelbrot.vhd:51]
 	Parameter C_CHANNEL_NUMBER bound to: 4 - type: integer 
@@ -28,8 +28,8 @@ INFO: [Synth 8-638] synthesizing module 'hdmi' [C:/Users/Vivien/Documents/Master
 	Parameter C_VGA_CONFIG bound to: 192'b000001000000000000000010010110000000000010100000000000001000110000000000000011000000000000010100000000000001010000000000000000110000010101000000000000100111101100000000000000000000000000000000 
 	Parameter C_RESOLUTION bound to: 1024x600 - type: string 
 INFO: [Synth 8-113] binding component instance 'BUFGClkSysToClkVgaHdmixI' to cell 'BUFG' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:363]
-INFO: [Synth 8-3491] module 'clk_vga_hdmi_1024x600' declared at 'C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-18072-Vivien-HP/realtime/clk_vga_hdmi_1024x600_stub.vhdl:5' bound to instance 'ClkVgaHdmi1024x600xI' of component 'clk_vga_hdmi_1024x600' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:380]
-INFO: [Synth 8-638] synthesizing module 'clk_vga_hdmi_1024x600' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-18072-Vivien-HP/realtime/clk_vga_hdmi_1024x600_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'clk_vga_hdmi_1024x600' declared at 'C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-20068-Vivien-HP/realtime/clk_vga_hdmi_1024x600_stub.vhdl:5' bound to instance 'ClkVgaHdmi1024x600xI' of component 'clk_vga_hdmi_1024x600' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/hdmi.vhd:380]
+INFO: [Synth 8-638] synthesizing module 'clk_vga_hdmi_1024x600' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-20068-Vivien-HP/realtime/clk_vga_hdmi_1024x600_stub.vhdl:16]
 INFO: [Synth 8-638] synthesizing module 'vga' [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/vga.vhd:47]
 	Parameter C_DATA_SIZE bound to: 16 - type: integer 
 	Parameter C_PIXEL_SIZE bound to: 8 - type: integer 
@@ -131,7 +131,7 @@ INFO: [Synth 8-638] synthesizing module 'image_generator' [C:/Users/Vivien/Docum
 INFO: [Synth 8-256] done synthesizing module 'image_generator' (8#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/image_generator.vhd:46]
 INFO: [Synth 8-256] done synthesizing module 'mse_mandelbrot' (9#1) [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/mse_mandelbrot.vhd:51]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 392.363 ; gain = 146.504
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 392.383 ; gain = 146.496
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -141,17 +141,17 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 392.363 ; gain = 146.504
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 392.383 ; gain = 146.496
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Device 21-403] Loading part xc7a200tsbg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-18072-Vivien-HP/dcp1/clk_vga_hdmi_1024x600_in_context.xdc] for cell 'HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI'
-Finished Parsing XDC File [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-18072-Vivien-HP/dcp1/clk_vga_hdmi_1024x600_in_context.xdc] for cell 'HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI'
+Parsing XDC File [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-20068-Vivien-HP/dcp1/clk_vga_hdmi_1024x600_in_context.xdc] for cell 'HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI'
+Finished Parsing XDC File [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/.Xil/Vivado-20068-Vivien-HP/dcp1/clk_vga_hdmi_1024x600_in_context.xdc] for cell 'HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI'
 Parsing XDC File [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc]
 Finished Parsing XDC File [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/constr/Nexys-Video-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mse_mandelbrot_propImpl.xdc].
@@ -161,23 +161,23 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 774.484 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 774.504 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 774.484 ; gain = 528.625
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 774.504 ; gain = 528.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 774.484 ; gain = 528.625
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 774.504 ; gain = 528.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for HdmixI/\ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI . (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 774.484 ; gain = 528.625
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 774.504 ; gain = 528.617
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "VCountxD" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "VgaSyncxS[HSyncxS]" won't be mapped to RAM because it is too sparse
@@ -187,7 +187,7 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To p
 INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:126]
 INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/ip/hdl/src/tmds_encoder.vhd:122]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 774.484 ; gain = 528.625
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:31 . Memory (MB): peak = 774.504 ; gain = 528.617
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -317,7 +317,7 @@ INFO: [Synth 8-3886] merging instance 'HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEn
 INFO: [Synth 8-3886] merging instance 'HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEncodedDataxDO_reg[1]' (FD) to 'HdmixI/VgaToHdmixI/TmdsEncoderC1xI/TmdsEncodedDataxDO_reg[0]'
 INFO: [Synth 8-3886] merging instance 'HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[4]' (FD) to 'HdmixI/VgaToHdmixI/TmdsEncoderC2xI/TmdsEncodedDataxDO_reg[2]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 774.484 ; gain = 528.625
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:35 . Memory (MB): peak = 774.504 ; gain = 528.617
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -335,13 +335,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'HdmixI/ClkVgaHdmi1024x600
 INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'HdmixI/ClkVgaHdmi1024x600xG.ClkVgaHdmi1024x600xI/ClkSys100MhzxC' to 'HdmixI/ClkVgaHdmi1024x600xG.BUFGClkSysToClkVgaHdmixI/O'
 INFO: [Synth 8-5819] Moved 3 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 782.773 ; gain = 536.914
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:50 . Memory (MB): peak = 784.926 ; gain = 539.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 824.496 ; gain = 578.637
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:51 . Memory (MB): peak = 826.508 ; gain = 580.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -353,7 +353,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 833.520 ; gain = 587.660
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 835.535 ; gain = 589.648
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -377,7 +377,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:54 . Memory (MB): peak = 835.535 ; gain = 589.648
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -390,7 +390,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:54 . Memory (MB): peak = 835.535 ; gain = 589.648
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -402,25 +402,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:54 . Memory (MB): peak = 835.535 ; gain = 589.648
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:54 . Memory (MB): peak = 835.535 ; gain = 589.648
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:54 . Memory (MB): peak = 835.535 ; gain = 589.648
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:54 . Memory (MB): peak = 835.535 ; gain = 589.648
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -476,11 +476,11 @@ Report Instance Areas:
 |13    |  \ImageGeneratorxB.ImageGeneratorxI  |image_generator      |    63|
 +------+--------------------------------------+---------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 833.520 ; gain = 587.660
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:54 . Memory (MB): peak = 835.535 ; gain = 589.648
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 833.520 ; gain = 205.539
-Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 833.520 ; gain = 587.660
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:40 . Memory (MB): peak = 835.535 ; gain = 207.527
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:54 . Memory (MB): peak = 835.535 ; gain = 589.648
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -492,8 +492,8 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 84 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 833.520 ; gain = 599.316
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:01:21 . Memory (MB): peak = 835.535 ; gain = 601.305
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Vivien/Documents/Master/S2/LPSC/Section11/mse_mandelbrot_no_bram/mse_mandelbrot.runs/synth_1/mse_mandelbrot.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mse_mandelbrot_utilization_synth.rpt -pb mse_mandelbrot_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.280 . Memory (MB): peak = 833.520 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 27 19:10:07 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 835.535 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 28 13:18:00 2018...
