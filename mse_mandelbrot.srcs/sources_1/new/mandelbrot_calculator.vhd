@@ -46,42 +46,70 @@ generic (
     );
 end mandelbrot_calculator;
 
-architecture Calculator of mandelbrot_calculator is
+architecture Behavioral of mandelbrot_calculator is
+
+  -- Constante pour les tailles (multiplication etc)
+  constant SIZE_BIG             : integer := 2*SIZE;
+  constant SIZE_IN_BIG          : integer := comma+SIZE;
+  constant COMMA_BIG            : integer := 2*comma;
+  constant SIZE_RADIUS          : integer := 2*(SIZE-comma);
 
   -- Stat machine states
-  constant WAIT_start_i_STATE : std_logic_vector := "00";  -- Etat initial
-  constant CALC_STATE       : std_logic_vector := "01";
-  constant finished_o_STATE   : std_logic_vector := "10";  -- Transitoire
+  constant WAIT_start_i_STATE   : std_logic_vector := "00";  -- Etat initial
+  constant CALC_STATE           : std_logic_vector := "01";
+  constant finished_o_STATE     : std_logic_vector := "10";  -- Transitoire
 
   signal next_state, current_state : std_logic_vector (1 downto 0);
 
- -- Output signals
+/* -- Output signals
   signal iterations_s   : std_logic_vector(SIZE-1 downto 0);
   signal zn1_real_s     : std_logic_vector(SIZE-1 downto 0);
   signal zn1_imag_s     : std_logic_vector(SIZE-1 downto 0);
 
   -- Intermediate signals
-  signal radius_s       : std_logic_vector(2 downto 0); -- on va tester si c'est plus grand que 4, pas besoin de plus
+  signal radius_s       : std_logic_vector(3 downto 0); -- on va tester si c'est plus grand que 4, pas besoin de plus
   signal z_real2_s      : std_logic_vector(SIZE-1 downto 0); -- on s'occupe pas du carry
   signal z_imag2_s      : std_logic_vector(SIZE-1 downto 0);
   signal z_r2_i2_s      : std_logic_vector(SIZE-1 downto 0);
   signal z_ri_s         : std_logic_vector(SIZE-1 downto 0);
+  signal z_2ri_s         : std_logic_vector(SIZE-1 downto 0);
   
   signal z_real2_big_s      : std_logic_vector(2*SIZE-1 downto 0); -- on s'occupe pas du carry
   signal z_imag2_big_s      : std_logic_vector(2*SIZE-1 downto 0);   
   signal z_ri_big_s         : std_logic_vector(2*SIZE-1 downto 0);
-  signal radius_big_s       : std_logic_vector(SIZE-1 downto 0);
-  
- 
+  signal radius_big_s       : std_logic_vector(SIZE-1 downto 0);*/
 
 begin
   ----------------------------------------------
   -- calc_proc                         ---------
   ----------------------------------------------
     calc_proc : process (start_i, current_state)
+    -- Variables de sortie
+    variable iterations_s   : std_logic_vector(SIZE-1 downto 0);
+    variable zn1_real_s     : std_logic_vector(SIZE-1 downto 0);
+    variable zn1_imag_s     : std_logic_vector(SIZE-1 downto 0);
+    
+    -- Variables intermédiaires
+    variable z_r2_i2_s      : std_logic_vector(SIZE-1 downto 0);
+    variable z_ri_s         : std_logic_vector(SIZE-1 downto 0);
+    variable z_2ri_s        : std_logic_vector(SIZE-1 downto 0);
+    
+    variable z_real2_big_s  : std_logic_vector(SIZE_BIG-1 downto 0); -- on s'occupe pas du carry
+    variable z_imag2_big_s  : std_logic_vector(SIZE_BIG-1 downto 0);   
+    variable z_ri_big_s     : std_logic_vector(SIZE_BIG-1 downto 0);
+    variable z_r2_i2_big_s  : std_logic_vector(SIZE_BIG-1 downto 0);
+    variable radius_big_s   : std_logic_vector(SIZE_BIG-1 downto 0);
+    variable radius_s       : std_logic_vector(SIZE_RADIUS-1 downto 0);
+    
+    variable stop_calc      : boolean := false;
+    
     begin
-      next_state <= WAIT_start_i_STATE; --valeur par default
+      --valeurs par default
+      next_state <= WAIT_start_i_STATE;
       finished_o <= '0';
+      ready_o <= '0';
+      
+      -- State machine
       case current_state is
         when WAIT_START_I_STATE =>
           ready_o <= '1';
@@ -90,34 +118,76 @@ begin
           end if;
 
         when CALC_STATE  =>
-          zn1_real_s <= (others => '0'); -- a zÃ©ro comme Ã§a pas de if pour la premiÃ¨re itÃ©ration
-          zn1_imag_s <= (others => '0');
-          iterations_s <= (others => '0');
-          radius_s <= (others => '0');
-          while radius_s <= "100" AND unsigned(iterations_s) < max_iter loop
-            -- Mise au carrÃ© de Zr et Zpi
-            z_real2_big_s   <= std_logic_vector(unsigned(zn1_real_s)*unsigned(zn1_real_s));
-            z_real2_s       <= z_real2_big_s(comma+SIZE-1 downto comma);
-            z_imag2_big_s   <= std_logic_vector(unsigned(zn1_imag_s)*unsigned(zn1_imag_s));
-            z_imag2_s       <= z_imag2_big_s(comma+SIZE-1 downto comma);
+          -- On met à zéro car à la première itération Z0 = 0 !!       
+          zn1_real_s := (others => '0'); 
+          zn1_imag_s := (others => '0');
+          
+          iterations_s := (others => '0');
+          
+          -- On calcul tant que le carré du rayon n'est pas plus grand que 4 ou qu'on arrive à max_iter
+          while not stop_calc loop
+            -- Mise au carré de Zr et Zpi
+            z_real2_big_s   := std_logic_vector(signed(zn1_real_s)*signed(zn1_real_s));
+            z_imag2_big_s   := std_logic_vector(signed(zn1_imag_s)*signed(zn1_imag_s));
+            
+            -- Calcul du rayon
+            radius_big_s    := std_logic_vector(signed(z_real2_big_s)+signed(z_imag2_big_s));
+            radius_s        := std_logic_vector(radius_big_s(SIZE_BIG-1 downto COMMA_BIG));
 
-            -- Soustraction de Zr2 et Zpi2
-            z_r2_i2_s       <= std_logic_vector(unsigned(z_real2_s)-unsigned(z_imag2_s));
+            -- Condition de sortie
+            if signed(radius_s) <= 4 AND signed(radius_s) >= -4  AND unsigned(iterations_s) < max_iter then
+                -- Soustraction de Zr2 et Zpi2
+                z_r2_i2_big_s   := std_logic_vector(signed(z_real2_big_s)-signed(z_imag2_big_s));
+                
+                -- Avant de couper pour garder un vecteur de la taille de CR pour l'addition qui va suivre, on regarde ce qu'on va enlever au dessus
+                -- On doit traiter pour garder un chiffre représentatif (pas enlever 32 par exemeple parce qu'il était sur le bit 5 qu'on garde pas)
+                -- On regarde aussi le premier bit que l'on va garder sinon ça peut changer de signe
+                -- Si c'est que des 0 ou que des 1 c'est le chiffre sera le même après troncation
+                if z_r2_i2_big_s(SIZE_BIG-1 downto SIZE_IN_BIG-1) = "00000" OR z_ri_big_s(SIZE_BIG-1 downto SIZE_IN_BIG-1) = "11111" then
+                    z_r2_i2_s   := z_r2_i2_big_s(SIZE_IN_BIG-1 downto comma);
+                --Sinon si c'est un entier positif plus grand que 4 donc on met tout à 1 sauf le premier 
+                elsif z_r2_i2_big_s(SIZE_BIG-1) = '0' then
+                    z_r2_i2_s   := "0111" & "111111111111";
+                -- Sinon c'est que le premeir valait 1 et les autres pas donc c'est un négatif supérieur à 4
+                else
+                    z_r2_i2_s   := "1000" & "000000000000";
+                end if;
+                
+                
+                -- Multiplication de Zr et Zpi et multiplication par 2
+                z_ri_big_s      := std_logic_vector(signed(zn1_real_s)*signed(zn1_imag_s));
+                -- Idem qu'avant
+                if z_ri_big_s(SIZE_BIG-1 downto SIZE_IN_BIG-1) = "00000" OR z_ri_big_s(SIZE_BIG-1 downto SIZE_IN_BIG-1) = "11111" then
+                    z_ri_s   := z_ri_big_s(SIZE_IN_BIG-1 downto comma);
+                --Sinon si c'est un entier positif plus grand que 4 donc on met tout à 1 sauf le premier 
+                elsif z_ri_big_s(SIZE_BIG-1) = '0' then
+                    z_ri_s   := "0111" & "111111111111";
+                -- Sinon c'est que le premeir valait 1 et les autres pas donc c'est un négatif supérieur à 4
+                else
+                    z_ri_s   := "1000" & "000000000000";
+                end if;
+                
+                -- Multiplication par 2
+                if z_ri_s(SIZE-1 downto SIZE-2) = "00" OR z_ri_s(SIZE-1 downto SIZE-2) = "00" then
+                    z_2ri_s := z_ri_s(SIZE-2 downto 0) & '0';
+                elsif z_ri_s(SIZE-1) = '0' then
+                    z_2ri_s   := "0111" & "111111111111";
+                else
+                    z_2ri_s   := "1000" & "000000000000";
+                end if;
+                    
+                -- Nouvelle valeur de sortie
+                zn1_real_s      := std_logic_vector(signed(z_r2_i2_s)+signed(c_real_i));
+                zn1_imag_s      := std_logic_vector(signed(z_2ri_s)+signed(c_imaginary_i));
 
-            -- Multiplication de Zr et Zpi et multiplication par 2
-            z_ri_big_s      <= std_logic_vector(unsigned(zn1_real_s)*unsigned(zn1_imag_s));
-            z_ri_s          <= z_ri_big_s(comma+SIZE-1 downto comma);
-            z_ri_s          <= z_ri_s(SIZE-1 downto 1) & "0"; -- x2
-
-            -- Nouvelle valeur de sortie
-            zn1_real_s  <= std_logic_vector(unsigned(z_r2_i2_s)+unsigned(c_real_i));
-            zn1_imag_s  <= std_logic_vector(unsigned(z_ri_s)+unsigned(c_imaginary_i));
-
-            radius_big_s    <= std_logic_vector(unsigned(z_real2_s)+unsigned(z_imag2_s));
-            radius_s        <= radius_big_s(comma+2 downto comma);
-
-            iterations_s <= std_logic_vector(unsigned(iterations_s) + 1);
+                -- incrémentation du compteur
+                iterations_s := std_logic_vector(unsigned(iterations_s) + 1);
+             else 
+                stop_calc := true;
+             end if;
           end loop;
+          
+          stop_calc := false;
 
           next_state <= finished_o_STATE;
         when finished_o_STATE  =>
@@ -143,4 +213,4 @@ begin
           current_state <= next_state;
         end if;
     end process; -- synch_proc
-end Calculator;
+end Behavioral;
