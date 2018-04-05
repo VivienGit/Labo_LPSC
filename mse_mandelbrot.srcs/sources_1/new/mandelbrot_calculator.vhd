@@ -60,24 +60,23 @@ architecture Behavioral of mandelbrot_calculator is
   constant finished_o_STATE     : std_logic_vector := "10";  -- Transitoire
 
   signal next_state, current_state : std_logic_vector (1 downto 0);
-
-/* -- Output signals
-  signal iterations_s   : std_logic_vector(SIZE-1 downto 0);
-  signal zn1_real_s     : std_logic_vector(SIZE-1 downto 0);
-  signal zn1_imag_s     : std_logic_vector(SIZE-1 downto 0);
-
-  -- Intermediate signals
-  signal radius_s       : std_logic_vector(3 downto 0); -- on va tester si c'est plus grand que 4, pas besoin de plus
-  signal z_real2_s      : std_logic_vector(SIZE-1 downto 0); -- on s'occupe pas du carry
-  signal z_imag2_s      : std_logic_vector(SIZE-1 downto 0);
-  signal z_r2_i2_s      : std_logic_vector(SIZE-1 downto 0);
-  signal z_ri_s         : std_logic_vector(SIZE-1 downto 0);
-  signal z_2ri_s         : std_logic_vector(SIZE-1 downto 0);
   
-  signal z_real2_big_s      : std_logic_vector(2*SIZE-1 downto 0); -- on s'occupe pas du carry
-  signal z_imag2_big_s      : std_logic_vector(2*SIZE-1 downto 0);   
-  signal z_ri_big_s         : std_logic_vector(2*SIZE-1 downto 0);
-  signal radius_big_s       : std_logic_vector(SIZE-1 downto 0);*/
+    signal zn1_real_ss     : std_logic_vector(SIZE-1 downto 0);
+    signal zn1_imag_ss     : std_logic_vector(SIZE-1 downto 0);
+
+    signal z_real2_big_ss  : std_logic_vector(SIZE_BIG-1 downto 0);  -- Ici pas besoin de retenue
+    signal z_imag2_big_ss  : std_logic_vector(SIZE_BIG-1 downto 0);  -- Idem 
+    signal z_ri_big_ss     : std_logic_vector(SIZE_BIG-1 downto 0);  -- Idem
+    signal z_r2_i2_big_ss  : std_logic_vector(SIZE_BIG downto 0);    -- Pas de moins 1 pour la retenue
+    signal radius_big_ss   : std_logic_vector(SIZE_BIG downto 0);    -- idem
+    signal radius_ss       : std_logic_vector(SIZE_RADIUS downto 0); -- idem
+    
+    signal z_2ri_big_ss    : std_logic_vector(SIZE_BIG downto 0);    -- Pas de -1 car on veut garder le signe dans le fois 2
+    
+    signal zn1_real_big_ss : std_logic_vector(SIZE_BIG+1 downto 0);  -- Plus 1, on a la retenue d'avant plus la nouvelle
+    signal zn1_imag_big_ss : std_logic_vector(SIZE_BIG+1 downto 0);  -- idem (1 retenue et fois 2)
+    
+    signal compl_zn1_ss : std_logic_vector(SIZE_BIG-SIZE downto 0);
 
 begin
   ----------------------------------------------
@@ -90,16 +89,21 @@ begin
     variable zn1_imag_s     : std_logic_vector(SIZE-1 downto 0);
     
     -- Variables intermédiaires
-    variable z_r2_i2_s      : std_logic_vector(SIZE-1 downto 0);
-    variable z_ri_s         : std_logic_vector(SIZE-1 downto 0);
-    variable z_2ri_s        : std_logic_vector(SIZE-1 downto 0);
     
-    variable z_real2_big_s  : std_logic_vector(SIZE_BIG-1 downto 0); -- on s'occupe pas du carry
-    variable z_imag2_big_s  : std_logic_vector(SIZE_BIG-1 downto 0);   
-    variable z_ri_big_s     : std_logic_vector(SIZE_BIG-1 downto 0);
-    variable z_r2_i2_big_s  : std_logic_vector(SIZE_BIG-1 downto 0);
-    variable radius_big_s   : std_logic_vector(SIZE_BIG-1 downto 0);
-    variable radius_s       : std_logic_vector(SIZE_RADIUS-1 downto 0);
+    variable z_real2_big_s  : std_logic_vector(SIZE_BIG-1 downto 0);  -- Ici pas besoin de retenue
+    variable z_imag2_big_s  : std_logic_vector(SIZE_BIG-1 downto 0);  -- Idem 
+    variable z_ri_big_s     : std_logic_vector(SIZE_BIG-1 downto 0);  -- Idem
+    variable z_r2_i2_big_s  : std_logic_vector(SIZE_BIG downto 0);    -- Pas de moins 1 pour la retenue
+    variable radius_big_s   : std_logic_vector(SIZE_BIG downto 0);    -- idem
+    variable radius_s       : std_logic_vector(SIZE_RADIUS downto 0); -- idem
+    
+    variable z_2ri_big_s    : std_logic_vector(SIZE_BIG downto 0);    -- Pas de -1 car on veut garder le signe dans le fois 2
+    
+    variable zn1_real_big_s : std_logic_vector(SIZE_BIG+1 downto 0);  -- Plus 1, on a la retenue d'avant plus la nouvelle
+    variable zn1_imag_big_s : std_logic_vector(SIZE_BIG+1 downto 0);  -- idem (1 retenue et fois 2)
+    
+    variable compl_after    : std_logic_vector(comma-1 downto 0) := (others => '0');     -- Pour compléter les inputs
+    variable compl_before   : std_logic_vector(SIZE-comma downto 0);
     
     variable stop_calc      : boolean := false;
     
@@ -131,54 +135,50 @@ begin
             z_imag2_big_s   := std_logic_vector(signed(zn1_imag_s)*signed(zn1_imag_s));
             
             -- Calcul du rayon
-            radius_big_s    := std_logic_vector(signed(z_real2_big_s)+signed(z_imag2_big_s));
-            radius_s        := std_logic_vector(radius_big_s(SIZE_BIG-1 downto COMMA_BIG));
+            radius_big_s    := std_logic_vector(unsigned('0' & z_real2_big_s)+unsigned('0' & z_imag2_big_s)); -- C'est des carrés, c'est forcément positif
+            radius_s        := std_logic_vector(radius_big_s(SIZE_BIG downto COMMA_BIG));
 
             -- Condition de sortie
-            if signed(radius_s) <= 4 AND signed(radius_s) >= -4  AND unsigned(iterations_s) < max_iter then
+            if unsigned(radius_s) <= 4  AND unsigned(iterations_s) < 1 then
+            ----------------- Calcul de la partie reel --------------------
                 -- Soustraction de Zr2 et Zpi2
-                z_r2_i2_big_s   := std_logic_vector(signed(z_real2_big_s)-signed(z_imag2_big_s));
+                z_r2_i2_big_s   := std_logic_vector(signed('0' & z_real2_big_s)-signed('0' & z_imag2_big_s));
                 
                 -- Avant de couper pour garder un vecteur de la taille de CR pour l'addition qui va suivre, on regarde ce qu'on va enlever au dessus
                 -- On doit traiter pour garder un chiffre représentatif (pas enlever 32 par exemeple parce qu'il était sur le bit 5 qu'on garde pas)
-                -- On regarde aussi le premier bit que l'on va garder sinon ça peut changer de signe
+                -- On regarde les 5 au dessus (4 + retenue) et aussi le premier bit que l'on va garder sinon ça peut changer de signe
                 -- Si c'est que des 0 ou que des 1 c'est le chiffre sera le même après troncation
-                if z_r2_i2_big_s(SIZE_BIG-1 downto SIZE_IN_BIG-1) = "00000" OR z_ri_big_s(SIZE_BIG-1 downto SIZE_IN_BIG-1) = "11111" then
-                    z_r2_i2_s   := z_r2_i2_big_s(SIZE_IN_BIG-1 downto comma);
+                
+                compl_before        := (others => c_real_i(SIZE-1));
+                zn1_real_big_s      := std_logic_vector(signed(z_r2_i2_big_s(SIZE_BIG) & z_r2_i2_big_s)+signed(compl_before & c_real_i & compl_after));
+ 
+                if zn1_real_big_s(SIZE_BIG+1 downto SIZE_IN_BIG-1) = "0000000" OR zn1_real_big_s(SIZE_BIG+1 downto SIZE_IN_BIG-1) = "1111111" then
+                    zn1_real_s   := zn1_real_big_s(SIZE_IN_BIG-1 downto comma);
                 --Sinon si c'est un entier positif plus grand que 4 donc on met tout à 1 sauf le premier 
-                elsif z_r2_i2_big_s(SIZE_BIG-1) = '0' then
-                    z_r2_i2_s   := "0111" & "111111111111";
+                elsif zn1_real_big_s(SIZE_BIG+1) = '0' then
+                    zn1_real_s   := "0111" & "111111111111";
                 -- Sinon c'est que le premeir valait 1 et les autres pas donc c'est un négatif supérieur à 4
                 else
-                    z_r2_i2_s   := "1000" & "000000000000";
+                    zn1_real_s   := "1000" & "000000000000";
                 end if;
                 
-                
+              ----------------- Calcul de la partie imaginaire --------------------  
                 -- Multiplication de Zr et Zpi et multiplication par 2
                 z_ri_big_s      := std_logic_vector(signed(zn1_real_s)*signed(zn1_imag_s));
-                -- Idem qu'avant
-                if z_ri_big_s(SIZE_BIG-1 downto SIZE_IN_BIG-1) = "00000" OR z_ri_big_s(SIZE_BIG-1 downto SIZE_IN_BIG-1) = "11111" then
-                    z_ri_s   := z_ri_big_s(SIZE_IN_BIG-1 downto comma);
+                z_2ri_big_s     := z_ri_big_s & '0';
+                
+                compl_before        := (others => c_imaginary_i(SIZE-1));
+                zn1_imag_big_s      := std_logic_vector(signed(z_2ri_big_s(SIZE_BIG) & z_2ri_big_s)+signed(compl_before & c_imaginary_i & compl_after)); 
+                
+                if zn1_imag_big_s(SIZE_BIG+1 downto SIZE_IN_BIG-1) = "0000000" OR zn1_imag_big_s(SIZE_BIG+1 downto SIZE_IN_BIG-1) = "1111111" then
+                    zn1_imag_s   := zn1_imag_big_s(SIZE_IN_BIG-1 downto comma);
                 --Sinon si c'est un entier positif plus grand que 4 donc on met tout à 1 sauf le premier 
-                elsif z_ri_big_s(SIZE_BIG-1) = '0' then
-                    z_ri_s   := "0111" & "111111111111";
+                elsif zn1_imag_big_s(SIZE_BIG+1) = '0' then
+                    zn1_imag_s   := "0111" & "111111111111";
                 -- Sinon c'est que le premeir valait 1 et les autres pas donc c'est un négatif supérieur à 4
                 else
-                    z_ri_s   := "1000" & "000000000000";
+                    zn1_imag_s   := "1000" & "000000000000";
                 end if;
-                
-                -- Multiplication par 2
-                if z_ri_s(SIZE-1 downto SIZE-2) = "00" OR z_ri_s(SIZE-1 downto SIZE-2) = "00" then
-                    z_2ri_s := z_ri_s(SIZE-2 downto 0) & '0';
-                elsif z_ri_s(SIZE-1) = '0' then
-                    z_2ri_s   := "0111" & "111111111111";
-                else
-                    z_2ri_s   := "1000" & "000000000000";
-                end if;
-                    
-                -- Nouvelle valeur de sortie
-                zn1_real_s      := std_logic_vector(signed(z_r2_i2_s)+signed(c_real_i));
-                zn1_imag_s      := std_logic_vector(signed(z_2ri_s)+signed(c_imaginary_i));
 
                 -- incrémentation du compteur
                 iterations_s := std_logic_vector(unsigned(iterations_s) + 1);
@@ -197,10 +197,25 @@ begin
           next_state <= WAIT_start_i_STATE;
         end case;
         
+        -- Pour le debug
+        zn1_real_ss <= zn1_real_s; 
+        zn1_imag_ss <= zn1_imag_s;
+        z_real2_big_ss <= z_real2_big_s;
+        z_imag2_big_ss <= z_imag2_big_s;
+        z_ri_big_ss <= z_ri_big_s;
+        z_r2_i2_big_ss <=z_r2_i2_big_s;
+        radius_big_ss <= radius_big_s;
+        radius_ss  <=   radius_s;
+        
+        z_2ri_big_ss  <= z_2ri_big_s;
+        
+        zn1_real_big_ss <= zn1_real_big_s;
+        zn1_imag_big_ss <= zn1_imag_big_s;
+        
         -- Affectation des sorties
         z_real_o      <= zn1_real_s;
         z_imaginary_o <= zn1_imag_s;
-        iterations_o  <= iterations_s;
+        iterations_o  <= iterations_s; 
     end process; -- calc_proc
   ----------------------------------------------
   -- synch_proc                        ---------
