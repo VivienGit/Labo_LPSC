@@ -28,9 +28,12 @@ use UNISIM.VComponents.all;
 
 entity mandelbrot_calculator_tb is
 generic (
-  comma     : integer := 12;
-  max_iter  : integer := 100;
-  SIZE      : integer := 16);
+    comma       : integer := 12; 
+    max_iter    : integer := 100;
+    SIZE        : integer := 16;
+    ITER_SIZE   : integer := 7;
+    X_ADD_SIZE  : integer := 10;
+    Y_ADD_SIZE  : integer := 10);
 end mandelbrot_calculator_tb;
 
 architecture testbench of mandelbrot_calculator_tb is
@@ -45,16 +48,26 @@ architecture testbench of mandelbrot_calculator_tb is
   signal c_imaginary_sti  : std_logic_vector(SIZE-1 downto 0);
   signal z_real_obs       : std_logic_vector(SIZE-1 downto 0);
   signal z_imaginary_obs  : std_logic_vector(SIZE-1 downto 0);
-  signal iterations_obs   : std_logic_vector(SIZE-1 downto 0);
+  signal iterations_obs   : std_logic_vector(ITER_SIZE-1 downto 0);
+  
+  -- Singaux vides
+  signal x_sti           : std_logic_vector(X_ADD_SIZE-1 downto 0);
+  signal y_sti           : std_logic_vector(Y_ADD_SIZE-1 downto 0);
+  signal x_obs           : std_logic_vector(X_ADD_SIZE-1 downto 0);
+  signal y_obs           : std_logic_vector(Y_ADD_SIZE-1 downto 0);
 
   -- Internal singals
   signal sim_end_s : boolean := false; -- put true to end
 
   component mandelbrot_calculator is
   generic (
-    comma : integer := 12; -- nombre de bits après la virgule
-    max_iter : integer := 100;
-    SIZE : integer := 16);
+ 
+      comma       : integer := 12; 
+      max_iter    : integer := 100;
+      SIZE        : integer := 16;
+      ITER_SIZE   : integer := 7;
+      X_ADD_SIZE  : integer := 10;
+      Y_ADD_SIZE  : integer := 10);
 
     port(
       clk_i         : in std_logic;
@@ -66,7 +79,11 @@ architecture testbench of mandelbrot_calculator_tb is
       c_imaginary_i : in std_logic_vector(SIZE-1 downto 0);
       z_real_o      : out std_logic_vector(SIZE-1 downto 0);
       z_imaginary_o : out std_logic_vector(SIZE-1 downto 0);
-      iterations_o  : out std_logic_vector(SIZE-1 downto 0)
+      iterations_o  : out std_logic_vector(ITER_SIZE-1 downto 0);
+      x_o           : out std_logic_vector(X_ADD_SIZE-1 downto 0);
+      y_o           : out std_logic_vector(Y_ADD_SIZE-1 downto 0);
+      x_i           : in std_logic_vector(X_ADD_SIZE-1 downto 0);
+      y_i           : in std_logic_vector(Y_ADD_SIZE-1 downto 0)
     );
   end component;
 
@@ -75,7 +92,10 @@ begin
   generic map (
     comma       => comma,
     max_iter    => max_iter,
-    SIZE        => SIZE
+    SIZE        => SIZE,
+    ITER_SIZE   => ITER_SIZE,
+    X_ADD_SIZE  => X_ADD_SIZE,
+    Y_ADD_SIZE  => Y_ADD_SIZE
   )
   port map (
     clk_i         => clk_sti,
@@ -87,8 +107,11 @@ begin
     c_imaginary_i => c_imaginary_sti,
     z_real_o      => z_real_obs,
     z_imaginary_o => z_imaginary_obs,
-    iterations_o  => iterations_obs
-  );
+    iterations_o  => iterations_obs,
+    x_i           => x_sti,
+    y_i           => y_sti,
+    x_o           => x_obs,
+    y_o           => y_obs);
 
   ----------------------------------------------
   -----------  stimulus_proc           ---------

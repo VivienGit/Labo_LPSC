@@ -30,9 +30,12 @@ use UNISIM.VComponents.all;
 
 entity mandelbrot_calculator is
 generic (
-  comma     : integer := 12; 
-  max_iter  : integer := 100;
-  SIZE      : integer := 16);
+  comma       : integer := 12; 
+  max_iter    : integer := 100;
+  SIZE        : integer := 16;
+  ITER_SIZE   : integer := 7;
+  X_ADD_SIZE  : integer := 10;
+  Y_ADD_SIZE  : integer := 10);
 
   port(
       clk_i         : in std_logic;
@@ -44,7 +47,11 @@ generic (
       c_imaginary_i : in std_logic_vector(SIZE-1 downto 0);
       z_real_o      : out std_logic_vector(SIZE-1 downto 0);
       z_imaginary_o : out std_logic_vector(SIZE-1 downto 0);
-      iterations_o  : out std_logic_vector(SIZE-1 downto 0)
+      iterations_o  : out std_logic_vector(ITER_SIZE-1 downto 0);
+      x_o           : out std_logic_vector(X_ADD_SIZE-1 downto 0);
+      y_o           : out std_logic_vector(Y_ADD_SIZE-1 downto 0);
+      x_i           : in std_logic_vector(X_ADD_SIZE-1 downto 0);
+      y_i           : in std_logic_vector(Y_ADD_SIZE-1 downto 0)
   );
 end mandelbrot_calculator;
 
@@ -67,7 +74,7 @@ architecture Behavioral of mandelbrot_calculator is
   signal reset_val            : boolean := false;
   signal calc_finished_s      : boolean := false; 
   signal calc_in_progress     : boolean := false;
-  signal iterations_s         : std_logic_vector(SIZE-1 downto 0) := (others => '0');
+  signal iterations_s         : std_logic_vector(ITER_SIZE-1 downto 0) := (others => '0');
   signal z_real_s             : std_logic_vector(SIZE-1 downto 0);
   signal z_imag_s             : std_logic_vector(SIZE-1 downto 0);
   signal zn1_real_s           : std_logic_vector(SIZE-1 downto 0);
@@ -136,7 +143,7 @@ begin
     ----------------------------------------------
      --       Output Buffer and synch           --
     ----------------------------------------------    
-    buffer_proc : process (clk_i, rst_i, reset_val, zn1_real_new_s, zn1_imag_new_s)
+    buffer_proc : process (clk_i, rst_i, reset_val, zn1_real_new_s, zn1_imag_new_s, x_i, y_i)
     begin        
         if (rst_i = '1') then
             iterations_s      <= (others => '0'); -- Start the calculation
@@ -147,6 +154,8 @@ begin
             z_real_s        <= (others => '0');
             z_imag_s        <= (others => '0');
         elsif Rising_Edge(clk_i) then
+            x_o             <= x_i;
+            y_o             <= y_i;
             if not calc_finished_s and calc_in_progress then
                 iterations_s    <= std_logic_vector(unsigned(iterations_s) + 1);
                 z_real_s        <= zn1_real_new_s(SIZE_IN_BIG-1 downto comma);               

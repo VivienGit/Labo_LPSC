@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1523111666">
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1523987291">
   <File Type="PA-TCL" Name="mse_mandelbrot.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="mse_mandelbrot_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="mse_mandelbrot_reports.tcl"/>
   <File Type="RDS-RDS" Name="mse_mandelbrot.vds"/>
   <File Type="RDS-UTIL" Name="mse_mandelbrot_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="mse_mandelbrot_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="mse_mandelbrot.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="mse_mandelbrot_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="mse_mandelbrot_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/ComplexValueGenerator.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/ip/hdl/src/hdmi_interface_pkg.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -56,7 +65,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/ip/hdl/src/image_generator.vhd">
+    <File Path="$PSRCDIR/sources_1/new/mandelbrot_calculator.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -64,6 +73,13 @@
     </File>
     <File Path="$PPRDIR/ip/hdl/src/mse_mandelbrot.vhd">
       <FileInfo SFType="VHDL2008">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/ip/hdl/src/image_generator.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -81,20 +97,6 @@
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/mandelbrot_calculator.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../mandelbrot_calculator.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -122,4 +124,5 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="clk_vga_hdmi_1024x600"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_bram"/>
 </GenRun>

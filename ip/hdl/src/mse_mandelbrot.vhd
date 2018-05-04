@@ -75,6 +75,12 @@ architecture rtl of mse_mandelbrot is
 
     constant C_DATA_SIZE                        : integer := 16;
     constant C_PIXEL_SIZE                       : integer := 8;
+    constant C_COMMA                            : integer := 12;
+    constant C_ITER_SIZE                        : integer := 7;
+    constant C_MAX_ITER                         : integer := 100;
+    constant C_X_SIZE                           : integer := 1024;
+    constant C_Y_SIZE                           : integer := 600;
+    constant C_SCREEN_RES                       : integer := 10;
     constant C_BRAM_VIDEO_MEMORY_ADDR_SIZE      : integer := 20;
     constant C_BRAM_VIDEO_MEMORY_HIGH_ADDR_SIZE : integer := 10;
     constant C_BRAM_VIDEO_MEMORY_LOW_ADDR_SIZE  : integer := 10;
@@ -120,6 +126,65 @@ architecture rtl of mse_mandelbrot is
             VidOnxSI     : in  std_logic;
             DataxDO      : out std_logic_vector(((C_PIXEL_SIZE * 3) - 1) downto 0));
     end component image_generator;
+    
+    component ComplexValueGenerator is
+        generic
+            (SIZE        : integer;  -- Taille en bits de nombre au format virgule fixe
+             COMMA       : integer;  -- Nombre de bits aprÃ¨s la virgule
+             X_SIZE      : integer;  -- Taille en X (Nombre de pixel) de la fractale Ã  afficher
+             Y_SIZE      : integer;  -- Taille en Y (Nombre de pixel) de la fractale Ã  afficher
+             SCREEN_RES  : integer);    -- Nombre de bit pour les vecteurs X et Y de la position du pixel
+        port
+            (clk         : in  std_logic;
+             reset       : in  std_logic;
+             -- interface avec le module MandelbrotMiddleware
+             next_value  : in  std_logic;
+             c_real      : out std_logic_vector (SIZE-1 downto 0);
+             c_imaginary : out std_logic_vector (SIZE-1 downto 0);
+             X_screen    : out std_logic_vector (SCREEN_RES-1 downto 0);
+             Y_screen    : out std_logic_vector (SCREEN_RES-1 downto 0));
+    end component ComplexValueGenerator;
+    
+    component mandelbrot_calculator is
+        generic (
+            comma       : integer; 
+            max_iter    : integer;
+            SIZE        : integer;
+            ITER_SIZE   : integer;
+            X_ADD_SIZE  : integer;
+            Y_ADD_SIZE  : integer);
+    
+        port(
+            clk_i         : in std_logic;
+            rst_i         : in std_logic;
+            ready_o       : out std_logic;
+            start_i       : in std_logic;
+            finished_o    : out std_logic;
+            c_real_i      : in std_logic_vector(SIZE-1 downto 0);
+            c_imaginary_i : in std_logic_vector(SIZE-1 downto 0);
+            z_real_o      : out std_logic_vector(SIZE-1 downto 0);
+            z_imaginary_o : out std_logic_vector(SIZE-1 downto 0);
+            iterations_o  : out std_logic_vector(ITER_SIZE-1 downto 0);
+            x_o           : out std_logic_vector(X_ADD_SIZE-1 downto 0);
+            y_o           : out std_logic_vector(Y_ADD_SIZE-1 downto 0);
+            x_i           : in std_logic_vector(X_ADD_SIZE-1 downto 0);
+            y_i           : in std_logic_vector(Y_ADD_SIZE-1 downto 0));
+    end component mandelbrot_calculator;
+    
+    COMPONENT blk_mem_bram
+      PORT (
+        clka              : IN STD_LOGIC;
+        wea               : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        addra             : IN STD_LOGIC_VECTOR(19 DOWNTO 0);
+        dina              : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+        douta             : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+        clkb              : IN STD_LOGIC;
+        web               : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        addrb             : IN STD_LOGIC_VECTOR(19 DOWNTO 0);
+        dinb              : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+        doutb             : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+      );
+    END COMPONENT;
 
     -- Pll Locked
     signal PllLockedxS    : std_logic                                           := '0';
@@ -133,6 +198,30 @@ architecture rtl of mse_mandelbrot is
     -- Others
     signal DataxD         : std_logic_vector(((C_PIXEL_SIZE * 3) - 1) downto 0) := (others => '0');
     signal HdmiSourcexD   : t_HdmiSource                                        := C_NO_HDMI_SOURCE;
+    
+    -- Complex Value
+    signal c_real_s       : std_logic_vector (C_DATA_SIZE-1 downto 0);
+    signal c_imaginary_s  : std_logic_vector (C_DATA_SIZE-1 downto 0);
+    signal X_screen_s     : std_logic_vector (C_SCREEN_RES-1 downto 0);
+    signal Y_screen_s     : std_logic_vector (C_SCREEN_RES-1 downto 0);
+    
+    signal finished_s     : std_logic;
+    
+    signal ready_s        : std_logic;
+    signal start_s        : std_logic;
+    signal z_real_s       : std_logic_vector(C_DATA_SIZE-1 downto 0);
+    signal z_imaginary_s  : std_logic_vector(C_DATA_SIZE-1 downto 0);
+    signal iterations_s   : std_logic_vector(C_ITER_SIZE-1 downto 0);
+    signal calc_add_x_s   : std_logic_vector(C_SCREEN_RES-1 downto 0);
+    signal calc_add_y_s   : std_logic_vector(C_SCREEN_RES-1 downto 0);
+    
+    
+    signal web_s          : std_logic_vector(0 downto 0);    
+    signal wea_s          : std_logic_vector(0 downto 0);
+    signal d_out_bram_s   : std_logic_vector(C_ITER_SIZE-1 downto 0);
+    signal addrb_s        : std_logic_vector(C_BRAM_VIDEO_MEMORY_ADDR_SIZE-1 downto 0);
+    signal addwa_s        : std_logic_vector(C_BRAM_VIDEO_MEMORY_ADDR_SIZE-1 downto 0);
+
 
     -- Debug signals
 
@@ -183,6 +272,9 @@ begin  -- architecture rtl
     ---------------------------------------------------------------------------
     -- HDMI Interface
     ---------------------------------------------------------------------------
+    DataxD(((C_PIXEL_SIZE * 3) - 1) downto 0) <= d_out_bram_s((C_ITER_SIZE - 1) downto 0) & '0' & 
+                                                 d_out_bram_s((C_ITER_SIZE - 1) downto 0) & '0' & 
+                                                 d_out_bram_s((C_ITER_SIZE - 1) downto 0) & '0';
     HdmixI : entity work.hdmi
         generic map (
             C_CHANNEL_NUMBER => C_CHANNEL_NUMBER,
@@ -208,6 +300,7 @@ begin  -- architecture rtl
             HdmiTxPxDO     => HdmiSourcexD.HdmiSourceOutxD.HdmiTxPxD,
             HdmiTxNxDO     => HdmiSourcexD.HdmiSourceOutxD.HdmiTxNxD);
 
+
     RstPllLockedxB : block is
     begin  -- block RstPllLockedxB
 
@@ -215,7 +308,7 @@ begin  -- architecture rtl
 
     end block RstPllLockedxB;
 
-    ImageGeneratorxB : block is
+ /*   ImageGeneratorxB : block is
     begin  -- block ImageGeneratorxB
 
         ---------------------------------------------------------------------------
@@ -235,6 +328,84 @@ begin  -- architecture rtl
                 VidOnxSI     => VidOnxS,
                 DataxDO      => DataxD);
 
-    end block ImageGeneratorxB;
+    end block ImageGeneratorxB; */
+    
+    ComplexeValueGeneratorxB : block is
+    begin  -- block ComplexeValueGeneratorxB
+   
+     ---------------------------------------------------------------------------
+     -- Value Generator
+     ---------------------------------------------------------------------------
+    ComplexeValueGeneratorxI : ComplexValueGenerator
+       generic map (
+           SIZE         => C_DATA_SIZE,
+           COMMA        => C_COMMA,
+           X_SIZE       => C_X_SIZE,
+           Y_SIZE       => C_Y_SIZE,
+           SCREEN_RES   => C_SCREEN_RES)
+       port map (
+           clk          => ClkSys100MhzxC,
+           reset        => RstxR,
+           next_value   => finished_s,
+           c_real       => c_real_s,
+           c_imaginary  => c_imaginary_s,
+           X_screen     => X_screen_s,
+           Y_screen     => Y_screen_s);
+
+    end block ComplexeValueGeneratorxB;
+    
+    mandelbrot_calculatorxB : block is
+    begin  -- block ComplexeValueGeneratorxB
+   
+     ---------------------------------------------------------------------------
+     -- Value Generator
+     ---------------------------------------------------------------------------
+    mandelbrot_calculatorxI : entity work.mandelbrot_calculator
+    generic map (
+        comma       => C_COMMA,
+        max_iter    => C_MAX_ITER,
+        SIZE        => C_DATA_SIZE,
+        ITER_SIZE   => C_ITER_SIZE,
+        X_ADD_SIZE  => C_BRAM_VIDEO_MEMORY_LOW_ADDR_SIZE,
+        Y_ADD_SIZE  => C_BRAM_VIDEO_MEMORY_HIGH_ADDR_SIZE)
+
+    port map(
+        clk_i         => ClkSys100MhzxC,
+        rst_i         => RstxR,
+        ready_o       => ready_s,
+        start_i       => ready_s,
+        finished_o    => finished_s,
+        c_real_i      => c_real_s,
+        c_imaginary_i => c_imaginary_s,
+        z_real_o      => z_real_s,
+        z_imaginary_o => z_imaginary_s,
+        iterations_o  => iterations_s,
+        x_o           => calc_add_x_s, --> pour la BRAM en adress
+        y_o           => calc_add_y_s,  --> pour la BRAM en adress
+        x_i           => X_screen_s,
+        y_i           => Y_screen_s);
+  end block mandelbrot_calculatorxB; 
+  
+  addrb_s <= VCountxD(C_BRAM_VIDEO_MEMORY_HIGH_ADDR_SIZE - 1 downto 0) & HCountxD(C_BRAM_VIDEO_MEMORY_LOW_ADDR_SIZE - 1 downto 0);
+  addwa_s <= Y_screen_s & X_screen_s;
+  
+  blk_mem_bramxB : block is
+  begin  -- block ComplexeValueGeneratorxB
+  web_s(0) <= '0';
+  wea_s(0) <= finished_s;
+  blk_mem_bramxI : blk_mem_bram
+    PORT MAP (
+      clka  => ClkSys100MhzxC,
+      wea   => wea_s,
+      addra => addwa_s,
+      dina  => iterations_s,
+      douta => open,
+      clkb  => ClkVgaxC,
+      web   => web_s,
+      addrb => addrb_s,
+      dinb  => (others => '0'),
+      doutb => d_out_bram_s
+    ); 
+  end block blk_mem_bramxB; 
 
 end architecture rtl;
